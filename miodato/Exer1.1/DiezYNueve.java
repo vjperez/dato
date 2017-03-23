@@ -1,5 +1,6 @@
 /*
- *  Working with Fibonacci
+ *  Working with Fibonacci series
+ *  
  */
 
 import edu.princeton.cs.algs4.StdOut;
@@ -7,6 +8,7 @@ import edu.princeton.cs.algs4.StdOut;
 class DiezYNueve{
     
     public static long F(int f){
+        //StdOut.println("Need F(" + f + ").");
         if(f == 0) return 0;
         if(f == 1) return 1;
         return F(f-2) + F(f-1);
