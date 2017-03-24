@@ -151,3 +151,27 @@ Calculation took 0 hrs:   2 min:   35 sec:   648 millisec
 Fibonacci 50 = 12,586,269,025
 Calculation took 0 hrs:   4 min:   6 sec:   164 millisec
 
+Fibonacci 51 = 20,365,011,074
+Calculation took 0 hrs:   6 min:   35 sec:   461 millisec
+
+Fibonacci 52 = 32,951,280,099
+Calculation took 0 hrs:   10 min:   39 sec:   850 millisec
+
+Fibonacci 53 = 53,316,291,173
+Calculation took 0 hrs:   17 min:   15 sec:   280 millisec
+
+Fibonacci 54 = 86,267,571,272
+Calculation took 0 hrs:   27 min:   55 sec:   106 millisec
+
+Fibonacci 55 = 139,583,862,445
+Calculation took 0 hrs:   45 min:   10 sec:   378 millisec
+
+Fibonacci 56 = 225,851,433,717
+Calculation took 1 hrs:   13 min:   5 sec:   462 millisec
+
+Fibonacci 57 = 365,435,296,162
+Calculation took 1 hrs:   58 min:   15 sec:   826 millisec
+
+Fibonacci 58 = 591,286,729,879
+Calculation took 3 hrs:   11 min:   21 sec:   674 millisec
+
