@@ -9,14 +9,14 @@ import java.util.Arrays;
 
 class FibonacciCalculationTime{
     
-    public FibonacciCalculationTime(){
-		//fibonacciArray = new long[100];
-		Arrays.fill(fibonacciArray, -1);
-		fibonacciArray[0] = 0;  
-		fibonacciArray[1] = 1;  
+    static{
+		FibonacciCalculationTime.fibonacciArray = new long[100];
+		Arrays.fill(FibonacciCalculationTime.fibonacciArray, -1);
+		FibonacciCalculationTime.fibonacciArray[0] = 0;  
+		FibonacciCalculationTime.fibonacciArray[1] = 1;  
 	}
 	
-	//calculates Fibonacci storing values in array
+	//calculates Fibonacci using array with capacity to store first 100 fibonacci values
     public static long Fib(int f){
         if(f == 0) return fibonacciArray[0];
         if(f == 1) return fibonacciArray[1];
@@ -53,6 +53,7 @@ class FibonacciCalculationTime{
         int b = Integer.parseInt(args[1]);
         TimeInterval fibonacciCalculationTime = new TimeInterval();
         
+        StdOut.println("Calculation done using array to save values.");
         for(int f = a; f < b; f++){
             fibonacciCalculationTime.setTimeA();
             long result = Fib(f);
@@ -63,5 +64,5 @@ class FibonacciCalculationTime{
         }
     }
     
-    private static long[] fibonacciArray = new long[100];
+    private static long[] fibonacciArray;
 }
