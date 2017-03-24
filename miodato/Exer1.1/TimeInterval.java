@@ -20,6 +20,18 @@ class TimeInterval{
         return timeB-timeA;
     }
     
+    public String toString(){
+        long longDiff = getMilliSecondsDiference();
+        long hours = longDiff / 3600000;
+        longDiff = longDiff % 3600000;
+        long minutes = longDiff / 60000;
+        longDiff = longDiff % 60000;
+        long seconds = longDiff / 1000;
+        longDiff = longDiff % 1000;
+        long millis = longDiff;
+        return hours + " hrs:   " + minutes + " min:   " + seconds + " sec:   " + millis + " millisec"; 
+    }
+    
     private long timeA;
     private long timeB;
 }

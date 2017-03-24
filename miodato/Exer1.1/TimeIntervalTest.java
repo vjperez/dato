@@ -22,6 +22,6 @@ class TimeIntervalTest{
         
         StdIn.readInt();
         intervalo.setTimeB();
-        StdOut.println("After input: " + intervalo.getMilliSecondsDiference() + " milliseconds.");
+        StdOut.println("After input: " + intervalo + "\n");
     }
 }
