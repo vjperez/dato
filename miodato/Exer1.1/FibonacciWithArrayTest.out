@@ -1,6 +1,6 @@
 Calculation done using array to save values.
 Fibonacci 0 = 0
-Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+Calculation took 0 hrs:   0 min:   0 sec:   1 millisec
 
 Fibonacci 1 = 1
 Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
@@ -179,3 +179,121 @@ Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
 Fibonacci 59 = 956,722,026,041
 Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
 
+Fibonacci 60 = 1,548,008,755,920
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 61 = 2,504,730,781,961
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 62 = 4,052,739,537,881
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 63 = 6,557,470,319,842
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 64 = 10,610,209,857,723
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 65 = 17,167,680,177,565
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 66 = 27,777,890,035,288
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 67 = 44,945,570,212,853
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 68 = 72,723,460,248,141
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 69 = 117,669,030,460,994
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 70 = 190,392,490,709,135
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 71 = 308,061,521,170,129
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 72 = 498,454,011,879,264
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 73 = 806,515,533,049,393
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 74 = 1,304,969,544,928,657
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 75 = 2,111,485,077,978,050
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 76 = 3,416,454,622,906,707
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 77 = 5,527,939,700,884,757
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 78 = 8,944,394,323,791,464
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 79 = 14,472,334,024,676,221
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 80 = 23,416,728,348,467,685
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 81 = 37,889,062,373,143,906
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 82 = 61,305,790,721,611,591
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 83 = 99,194,853,094,755,497
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 84 = 160,500,643,816,367,088
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 85 = 259,695,496,911,122,585
+Calculation took 0 hrs:   0 min:   0 sec:   1 millisec
+
+Fibonacci 86 = 420,196,140,727,489,673
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 87 = 679,891,637,638,612,258
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 88 = 1,100,087,778,366,101,931
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 89 = 1,779,979,416,004,714,189
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 90 = 2,880,067,194,370,816,120
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 91 = 4,660,046,610,375,530,309
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 92 = 7,540,113,804,746,346,429
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 93 = -6,246,583,658,587,674,878
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 94 = 1,293,530,146,158,671,551
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 95 = -4,953,053,512,429,003,327
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 96 = -3,659,523,366,270,331,776
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 97 = -8,612,576,878,699,335,103
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 98 = 6,174,643,828,739,884,737
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+The biggest long value is 9,223,372,036,854,775,807

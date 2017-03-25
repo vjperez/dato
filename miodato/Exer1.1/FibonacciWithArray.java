@@ -1,6 +1,11 @@
 /*
  *  Working with the calculation time of the Fibonacci series
  * 
+ *  F(92) is the last value produced without OVERFLOW, 
+ *  when using long.
+ *  So while using long, there is no point storing more 
+ *  than 92 fibonacci numbers
+ *  See FibonacciWithArrayTest.out
  */
 
 import java.util.Arrays;
