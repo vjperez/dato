@@ -1,0 +1,181 @@
+Calculation done using array to save values.
+Fibonacci 0 = 0
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 1 = 1
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 2 = 1
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 3 = 2
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 4 = 3
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 5 = 5
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 6 = 8
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 7 = 13
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 8 = 21
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 9 = 34
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 10 = 55
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 11 = 89
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 12 = 144
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 13 = 233
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 14 = 377
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 15 = 610
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 16 = 987
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 17 = 1,597
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 18 = 2,584
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 19 = 4,181
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 20 = 6,765
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 21 = 10,946
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 22 = 17,711
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 23 = 28,657
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 24 = 46,368
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 25 = 75,025
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 26 = 121,393
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 27 = 196,418
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 28 = 317,811
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 29 = 514,229
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 30 = 832,040
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 31 = 1,346,269
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 32 = 2,178,309
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 33 = 3,524,578
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 34 = 5,702,887
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 35 = 9,227,465
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 36 = 14,930,352
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 37 = 24,157,817
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 38 = 39,088,169
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 39 = 63,245,986
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 40 = 102,334,155
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 41 = 165,580,141
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 42 = 267,914,296
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 43 = 433,494,437
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 44 = 701,408,733
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 45 = 1,134,903,170
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 46 = 1,836,311,903
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 47 = 2,971,215,073
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 48 = 4,807,526,976
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 49 = 7,778,742,049
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 50 = 12,586,269,025
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 51 = 20,365,011,074
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 52 = 32,951,280,099
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 53 = 53,316,291,173
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 54 = 86,267,571,272
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 55 = 139,583,862,445
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 56 = 225,851,433,717
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 57 = 365,435,296,162
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 58 = 591,286,729,879
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
+Fibonacci 59 = 956,722,026,041
+Calculation took 0 hrs:   0 min:   0 sec:   0 millisec
+
