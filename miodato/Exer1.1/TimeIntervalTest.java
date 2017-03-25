@@ -22,6 +22,6 @@ class TimeIntervalTest{
         
         StdIn.readInt();
         intervalo.setTimeB();
-        StdOut.println("After input: " + intervalo + "\n");
+        StdOut.println("After input: " + intervalo + "\n"); // uses toString()
     }
 }
