@@ -1,9 +1,6 @@
 /*
  *  Working with the calculation time of the Fibonacci series
- *  Calculates fibonacci numbers from "a" to "b"
- *  "a" and "b" are received as command line arguments
  * 
- *  F(92) is the last value prduced without OVERFLOW, that's with b = 93
  */
 
 import java.util.Arrays;

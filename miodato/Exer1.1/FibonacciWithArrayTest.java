@@ -1,7 +1,10 @@
 /*
- *  Working with the calculation time of the Fibonacci series
  *  Calculates fibonacci numbers from "a" to "b"
  *  "a" and "b" are received as command line arguments
+ * 
+ *  F(92) is the last value produced without OVERFLOW, 
+ *  when using long, that's with b = 93
+ * 
  */
 
 import edu.princeton.cs.algs4.StdOut;
