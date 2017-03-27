@@ -1,0 +1,24 @@
+java -classpath .:/home/victor/workspace-java/sedgewick/algs4Jar/ BinarySearchForStringsTest02 peopleAuthorized.txt + < peopleTrying.txt > BinarySearchForStringsTest02.out
+According to peopleAuthorized.txt the authorized people are:
+ana figueroa : diego perez : rosa rivera : victor perez colon : viso perez : 
+
+Allowing access to:
+diego perez is allowed.
+viso perez is allowed.
+ana figueroa is allowed.
+10 wanted access, 3 where allowed.
+
+java -classpath .:/home/victor/workspace-java/sedgewick/algs4Jar/ BinarySearchForStringsTest02 peopleAuthorized.txt - < peopleTrying.txt >> BinarySearchForStringsTest02.out
+According to peopleAuthorized.txt the authorized people are:
+ana figueroa : diego perez : rosa rivera : victor perez colon : viso perez : 
+
+Not Allowing access to:
+pedro torres is NOT allowed.
+luis balbino is NOT allowed.
+miguel santos is NOT allowed.
+madre tomates is NOT allowed.
+pablo marmol is NOT allowed.
+jose barea is NOT allowed.
+carlos arroyo is NOT allowed.
+10 wanted access, 7 where NOT allowed.
+
