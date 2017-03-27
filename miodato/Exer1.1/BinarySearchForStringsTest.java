@@ -1,10 +1,10 @@
 /*
- * To run use the name of a text file containing strings 
+ * To run use the name of a text file containing strings (names in nombres.txt)
  * as your first command line argument.
- * Use a string a second command line argument.
+ * Use a string as a second command line argument (a name to be searched on nombres.txt).
  * 
- * The programs indicates in what index is located the string
- * passed as the second argument, or informs the user that the 
+ * The program indicates the index location of the string
+ * passed as the second argument, or returns -1 if the 
  * string is not present in the text file.
  * 
  * Binary search makes sense only for sorted arrays.
@@ -37,7 +37,7 @@ public class BinarySearchForStringsTest{
         if(index > -1) StdOut.println(person + " found at index " + index + ".");
         else StdOut.println(person + " not found.");
         
-        StdOut.println("Searching for " + person + ":");
+        StdOut.println("Searching recursively for " + person + ":");
         index = BinarySearchForStrings.recursiveIndexOf(names, person, 0, -1 + names.length);
         if(index > -1) StdOut.println(person + " found at index " + index + ".");
         else StdOut.println(person + " not found.");        
