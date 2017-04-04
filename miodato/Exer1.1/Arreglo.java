@@ -68,13 +68,30 @@ public class Arreglo{
     
     
     public static void insertionSort(String[] words){
-        int a = 0, b = 0;
-        while(b < words.length){
+        int first = 0, last = 0, indexOutOfRange = 1;
+        while(indexOutOfRange < words.length){
+            String savedValue = words[indexOutOfRange];
+            int[] where = placementOf(savedValue, words, first, last);
+            int flag = where[0]; int index = where[1]; 
+            if(flag == 0 || flag == 1) index++; // 0 means value is a duplicate, 1 means insert AFTER, in either case insert after
+            shift(words, index, last);
+            words[index] = savedValue;
             
+            last++; 
+            indexOutOfRange++;
         }
     }
     
     
     
-    
+    public static void shuffle(String[] words){
+        int howMany = words.length / 2;
+        int i = 0;
+        while(i < howMany){
+            int index01 = (int)(words.length * Math.random()); 
+            int index02 = (int)(words.length * Math.random()); 
+            String t = words[index01];  words[index01]= words[index02];  words[index02] = t;
+            i++;
+        }
+    }    
 }

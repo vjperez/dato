@@ -1,0 +1,33 @@
+java -classpath .:/home/victor/workspace-java/sedgewick/algs4Jar ArregloTest02 letters.txt < ArregloTestFunctions.txt  > ArregloTest02.out
+Strings from letters.txt :
+0:k  1:i  2:c  3:b  4:g  5:f  6:e  7:d  8:a  9:h  10:j  
+Select a function to work on the array.
+1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+Strings from letters.txt :
+0:h  1:c  2:i  3:b  4:f  5:g  6:e  7:d  8:a  9:k  10:j  
+Select a function to work on the array.
+1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+Strings from letters.txt :
+0:f  1:a  2:i  3:b  4:e  5:g  6:k  7:d  8:h  9:c  10:j  
+Select a function to work on the array.
+1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+Strings from letters.txt :
+0:a  1:b  2:c  3:d  4:e  5:f  6:g  7:h  8:i  9:j  10:k  
+Select a function to work on the array.
+1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+Strings from letters.txt :
+0:a  1:d  2:c  3:i  4:e  5:f  6:k  7:h  8:b  9:j  10:g  
+Select a function to work on the array.
+1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+Strings from letters.txt :
+0:a  1:d  2:f  3:i  4:e  5:c  6:h  7:k  8:b  9:j  10:g  
+Select a function to work on the array.
+1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+Strings from letters.txt :
+0:a  1:b  2:c  3:d  4:e  5:f  6:g  7:h  8:i  9:j  10:k  
+Select a function to work on the array.
+1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+Strings from letters.txt :
+0:j  1:b  2:c  3:i  4:d  5:f  6:g  7:h  8:a  9:k  10:e  
+Select a function to work on the array.
+1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle

@@ -21,7 +21,7 @@ public class ArregloTest{
         //Arrays.sort(names);
         Arreglo.undeSort(names);
         
-        StdOut.println("Sorted names from " + args[0] + " :");
+        StdOut.println("Sorted strings from " + args[0] + " :");
         for(int a = 0; a < names.length; a++){
             StdOut.print(a + ":" + names[a] + "  ");
         }
