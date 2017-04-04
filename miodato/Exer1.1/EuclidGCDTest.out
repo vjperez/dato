@@ -1,0 +1,14 @@
+java -classpath .:/home/victor/workspace-java/sedgewick/algs4Jar EuclidGCDTest 8 12
+computing greatest common divisor of 8 and 12.
+a= 8  b= 12
+a= 12  b= 8
+a= 8  b= 4
+a= 4  b= 0
+GCD is 4.
+computing greatest common divisor of 77 and 49.
+a= 77  b= 49
+a= 49  b= 28
+a= 28  b= 21
+a= 21  b= 7
+a= 7  b= 0
+GCD is 7.
