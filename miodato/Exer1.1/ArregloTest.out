@@ -1,0 +1,30 @@
+Sorted names from nombres.txt :
+0:ana  1:cheo  2:diego  3:felo  4:kristal  5:leo  6:lola  7:luis  8:maria  9:noris  10:omar  11:pedro  12:quiko  13:rosa  14:rosa  15:tita  16:victor  17:viso  18:yeco  19:zuly  
+
+Verifying where papo would be inserted to keep array sorted.
+{flag:index} = {1:10}.
+papo was not found, it could be inserted AFTER index 10 to keep array sorted.
+Sorted names from nombres.txt :
+0:ana  1:cheo  2:diego  3:felo  4:kristal  5:leo  6:lola  7:luis  8:maria  9:noris  10:omar  11:pedro  12:quiko  13:rosa  14:rosa  15:tita  16:victor  17:viso  18:yeco  19:zuly  
+
+Verifying where mar would be inserted to keep array sorted.
+{flag:index} = {-1:8}.
+mar was not found, it could be inserted BEFORE index 8 to keep array sorted.
+Sorted names from nombres.txt :
+0:ana  1:cheo  2:diego  3:felo  4:kristal  5:leo  6:lola  7:luis  8:maria  9:noris  10:omar  11:pedro  12:quiko  13:rosa  14:rosa  15:tita  16:victor  17:viso  18:yeco  19:zuly  
+
+Verifying where victor would be inserted to keep array sorted.
+{flag:index} = {0:16}.
+victor was found at index 16, a duplicate could be placed before or after that index to keep array sorted.
+Sorted names from nombres.txt :
+0:ana  1:cheo  2:diego  3:felo  4:kristal  5:leo  6:lola  7:luis  8:maria  9:noris  10:omar  11:pedro  12:quiko  13:rosa  14:rosa  15:tita  16:victor  17:viso  18:yeco  19:zuly  
+
+Verifying where aba would be inserted to keep array sorted.
+{flag:index} = {-1:0}.
+aba was not found, it could be inserted BEFORE index 0 to keep array sorted.
+Sorted names from nombres.txt :
+0:ana  1:cheo  2:diego  3:felo  4:kristal  5:leo  6:lola  7:luis  8:maria  9:noris  10:omar  11:pedro  12:quiko  13:rosa  14:rosa  15:tita  16:victor  17:viso  18:yeco  19:zuly  
+
+Verifying where zz would be inserted to keep array sorted.
+{flag:index} = {1:19}.
+zz was not found, it could be inserted AFTER index 19 to keep array sorted.
