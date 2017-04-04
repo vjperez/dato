@@ -42,11 +42,5 @@ public class BinarySearchForStringsTest{
         if(index > -1) StdOut.println(person + " found at index " + index + ".");
         else StdOut.println(person + " not found.");
         
-        StdOut.println("\nVerifying where " + person + " would be placed to keep array sorted.");
-        int[] resultado = BinarySearchForStrings.placementOf(person, names, 0, -1 + names.length);
-        StdOut.println("{flag:index} = {" +  resultado[0] + ":" + resultado[1] + "}.");
-        if(resultado[0] == 0) StdOut.println(person + " was found at index " + resultado[1] + ", a duplicate could be placed before or after that index to keep array sorted.");
-        else if (resultado[0] == 1  ) StdOut.println(person + " was not found, it could be inserted AFTER index "  + resultado[1] + " to keep array sorted.");
-        else if (resultado[0] == -1 ) StdOut.println(person + " was not found, it could be inserted BEFORE index " + resultado[1] + " to keep array sorted.");
     }
 }
