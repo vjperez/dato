@@ -16,7 +16,7 @@ public class ArregloTest02{
             String name;
             int a, b;
             
-            StdOut.println("Strings from " + args[0] + " :");
+            StdOut.println("\n\nStrings from " + args[0] + " :");
             for(int i = 0; i < names.length; i++){
                 StdOut.print(i + ":" + names[i] + "  ");
             }
@@ -45,7 +45,7 @@ public class ArregloTest02{
                 a = StdIn.readInt(); 
                 StdOut.println("Write index b: ");  
                 b = StdIn.readInt();
-                StdOut.println("\nVerifying where " + name + " would be inserted to keep array sorted.");
+                StdOut.println("Verifying where " + name + " would be inserted to keep array sorted.");
                 int[] resultado = Arreglo.placementOf(name, names, a, b);
                 if(resultado[0] == 0) StdOut.println(name + " was found at index " + resultado[1] + ", a duplicate could be placed before or after that index to keep array sorted.");
                 else if (resultado[0] == 1  ) StdOut.println(name + " was not found, it could be inserted AFTER index "  + resultado[1] + " to keep array sorted.");

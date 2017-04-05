@@ -1,6 +1,6 @@
 /*
- * static functions to sort array, sort array removing duplicates and  
- * to remove duplicates from an already sorted array
+ * static functions to sort array using bubble sort and insertion sort,  
+ * shift, shuffle and to remove duplicates from an already sorted array
  * 
  */
 public class Arreglo{
@@ -37,11 +37,12 @@ public class Arreglo{
     
     // Receives a String array that must be SORTED from index "first" to "last", both inclusive. 
     // It also receives a String as a parameter.
-    // returns an array with 2 integers:
+    // Returns an array with 2 integers, indicating where string must be inserted in order 
+    // to keep array sorted.
     // A result of:
-    // { 0,  index} means required String WAS found at "index"
-    // {-1,  index} means required String WOULD BE placed before "index" to keep array SORTED
-    // { 1,  index} means required String WOULD BE placed after  "index" to keep array SORTED
+    // { 0,  index} means required String IS already found at "index"
+    // {-1,  index} means required String SHOULD BE placed before "index" to keep array SORTED
+    // { 1,  index} means required String SHOULD BE placed after  "index" to keep array SORTED
     
     // Why is result array, in scope outsite this function ?? static scope ?
     
@@ -72,7 +73,8 @@ public class Arreglo{
         while(indexOutOfRange < words.length){
             String savedValue = words[indexOutOfRange];
             int[] where = placementOf(savedValue, words, first, last);
-            int flag = where[0]; int index = where[1]; 
+            int flag = where[0]; 
+            int index = where[1]; 
             if(flag == 0 || flag == 1) index++; // 0 means value is a duplicate, 1 means insert AFTER, in either case insert after
             shift(words, index, last);
             words[index] = savedValue;
