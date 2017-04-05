@@ -43,7 +43,7 @@ public class BinarySearchForStringsTest02{
             while(StdIn.hasNextLine()){
                 String personRequesting = StdIn.readLine();
                 requesting++;
-                if(BinarySearchForStrings.recursiveIndexOf(authorizedPeople, personRequesting, 0, -1+authorizedPeople.length) > -1){
+                if(BinarySearchForStrings.recursiveIndexOf(personRequesting, authorizedPeople, 0, -1+authorizedPeople.length) > -1){
                     allowed++;
                     StdOut.println(personRequesting + " is allowed.");
                 }
@@ -56,7 +56,7 @@ public class BinarySearchForStringsTest02{
             while(StdIn.hasNextLine()){
                 String personRequesting = StdIn.readLine();
                 requesting++;
-                if(BinarySearchForStrings.recursiveIndexOf(authorizedPeople, personRequesting, 0, -1+authorizedPeople.length) == -1){
+                if(BinarySearchForStrings.recursiveIndexOf(personRequesting, authorizedPeople, 0, -1+authorizedPeople.length) == -1){
                     notAllowed++;
                     StdOut.println(personRequesting + " is NOT allowed.");
                 }
