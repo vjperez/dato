@@ -116,19 +116,19 @@ public class Arreglo{
     
     
     // remove ALL duplicates from an already SORTED array
-    // makes a new array copying elements, array length may be reduced
+    // makes a new array copying elements, array length will be reduced
+    // if duplicates are found
     public static String[] removeDuplicate(String[] words){
-		int leftIndex = 0, rightIndex = 1, duplicates = 0, realLength = words.length - duplicates;
+		int leftIndex = 0, rightIndex = 1, realLength = words.length;
 		while(rightIndex < realLength){
 			while(words[leftIndex].equals(words[rightIndex])  &&  rightIndex < realLength){ 
 				shiftLeft(words, 1 + rightIndex, -1 + realLength);
-				duplicates++;
-				realLength = words.length - duplicates;
+				realLength--;
 			}
 			rightIndex++;
 			leftIndex++;	
 		}
-		if(duplicates > 0){
+		if(realLength < words.length){
 			String[] newWords = new String[realLength];
 			for(int i = 0; i < realLength; i++){
 				newWords[i] = words[i];
