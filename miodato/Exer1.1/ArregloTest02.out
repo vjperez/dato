@@ -1,49 +1,41 @@
-java -classpath .:/home/victor/algoSedgewick/algs4Jar/ ArregloTest02 letters.txt < ArregloTestFunctions.txt > ArregloTest02.out
 
 
-Strings from letters.txt :
-0:k  1:i  2:c  3:b  4:g  5:f  6:e  7:d  8:a  9:h  10:j  
+Strings from nombres.txt :
+0:cheo  1:rosa  2:pedro  3:luis  4:ana  5:victor  6:rosa  7:diego  8:viso  9:kristal  10:lola  11:yeco  12:felo  13:zuly  14:zuly  15:tita  16:ana  17:rosa  18:ana  19:omar  20:zuly  21:leo  22:maria  23:rosa  24:noris  25:quiko  
 Select a function to work on the array.
-1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL,  7:remove all duplucates
+shuffling...
 
 
-Strings from letters.txt :
-0:e  1:c  2:i  3:f  4:k  5:b  6:g  7:d  8:a  9:j  10:h  
+Strings from nombres.txt :
+0:quiko  1:zuly  2:ana  3:luis  4:kristal  5:rosa  6:omar  7:diego  8:ana  9:tita  10:noris  11:yeco  12:felo  13:pedro  14:viso  15:victor  16:rosa  17:maria  18:zuly  19:cheo  20:zuly  21:ana  22:rosa  23:rosa  24:lola  25:leo  
 Select a function to work on the array.
-1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL,  7:remove all duplucates
+bubble sorting...
 
 
-Strings from letters.txt :
-0:g  1:d  2:i  3:j  4:k  5:h  6:c  7:e  8:a  9:f  10:b  
+Strings from nombres.txt :
+0:ana  1:ana  2:ana  3:cheo  4:diego  5:felo  6:kristal  7:leo  8:lola  9:luis  10:maria  11:noris  12:omar  13:pedro  14:quiko  15:rosa  16:rosa  17:rosa  18:rosa  19:tita  20:victor  21:viso  22:yeco  23:zuly  24:zuly  25:zuly  
 Select a function to work on the array.
-1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL,  7:remove all duplucates
+shuffling...
 
 
-Strings from letters.txt :
-0:a  1:b  2:c  3:d  4:e  5:f  6:g  7:h  8:i  9:j  10:k  
+Strings from nombres.txt :
+0:ana  1:ana  2:victor  3:cheo  4:yeco  5:felo  6:quiko  7:pedro  8:rosa  9:luis  10:tita  11:diego  12:zuly  13:rosa  14:rosa  15:noris  16:omar  17:lola  18:maria  19:zuly  20:leo  21:viso  22:rosa  23:ana  24:zuly  25:kristal  
 Select a function to work on the array.
-1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL,  7:remove all duplucates
+insertion sorting...
 
 
-Strings from letters.txt :
-0:j  1:f  2:c  3:d  4:g  5:e  6:i  7:h  8:b  9:a  10:k  
+Strings from nombres.txt :
+0:ana  1:ana  2:ana  3:cheo  4:diego  5:felo  6:kristal  7:leo  8:lola  9:luis  10:maria  11:noris  12:omar  13:pedro  14:quiko  15:rosa  16:rosa  17:rosa  18:rosa  19:tita  20:victor  21:viso  22:yeco  23:zuly  24:zuly  25:zuly  
 Select a function to work on the array.
-1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL,  7:remove all duplucates
+Removing all duplicates...
 
 
-Strings from letters.txt :
-0:e  1:f  2:i  3:b  4:g  5:j  6:c  7:a  8:d  9:h  10:k  
+Strings from nombres.txt :
+0:ana  1:cheo  2:diego  3:felo  4:kristal  5:leo  6:lola  7:luis  8:maria  9:noris  10:omar  11:pedro  12:quiko  13:rosa  14:tita  15:victor  16:viso  17:yeco  18:zuly  
 Select a function to work on the array.
-1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
-
-
-Strings from letters.txt :
-0:a  1:b  2:c  3:d  4:e  5:f  6:g  7:h  8:i  9:j  10:k  
-Select a function to work on the array.
-1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
-
-
-Strings from letters.txt :
-0:a  1:c  2:i  3:d  4:e  5:f  6:g  7:h  8:k  9:j  10:b  
-Select a function to work on the array.
-1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle
+1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL,  7:remove all duplucates

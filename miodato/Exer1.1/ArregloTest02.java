@@ -12,7 +12,7 @@ public class ArregloTest02{
         String[] names = inputStream.readAllStrings();
         
         int answer = 1; // any value that makes condition TRUE
-        while (answer >= 1 && answer <= 6){
+        while (answer >= 1 && answer <= 7){
             String name;
             int a, b;
             
@@ -22,13 +22,15 @@ public class ArregloTest02{
             }
             StdOut.println("");
             
-            StdOut.println("Select a function to work on the array.\n1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL");
+            StdOut.println("Select a function to work on the array.\n1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL,  7:remove all duplucates");
             answer = StdIn.readInt();
             switch(answer){
             case 1:
+				StdOut.println("bubble sorting...");
                 Arreglo.undeSort(names);
             break;
             case 2:
+				StdOut.println("insertion sorting...");
                 Arreglo.insertionSort(names);
             break;
             case 3:
@@ -36,6 +38,7 @@ public class ArregloTest02{
                 a = StdIn.readInt(); 
                 StdOut.println("write index b: ");  
                 b = StdIn.readInt();
+                StdOut.println("shifting right, borders [" + a + ":" + b + "]");
                 Arreglo.shiftRight(names, a, b);
             break;
             case 4:
@@ -52,6 +55,7 @@ public class ArregloTest02{
                 else if (resultado[0] == -1 ) StdOut.println(name + " was not found, it could be inserted BEFORE index " + resultado[1] + " to keep array sorted.");
             break;
             case 5:
+				StdOut.println("shuffling...");
                 Arreglo.shuffle(names);
             break;
             case 6:
@@ -59,8 +63,13 @@ public class ArregloTest02{
                 a = StdIn.readInt(); 
                 StdOut.println("write index b: ");  
                 b = StdIn.readInt();
+                StdOut.println("shifting left, borders [" + a + ":" + b + "]");
                 Arreglo.shiftLeft(names, a, b);
-            break;            
+            break;  
+            case 7:
+				StdOut.println("Removing all duplicates...");
+                names = Arreglo.removeDuplicate(names);
+            break;                      
             default:break;
             } //switch
         } //while

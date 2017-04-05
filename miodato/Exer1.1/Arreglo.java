@@ -103,7 +103,7 @@ public class Arreglo{
     
     
     public static void shuffle(String[] words){
-        int howMany = words.length / 2;
+        int howMany = words.length;
         int i = 0;
         while(i < howMany){
             int index01 = (int)(words.length * Math.random()); 
@@ -111,5 +111,33 @@ public class Arreglo{
             String t = words[index01];  words[index01]= words[index02];  words[index02] = t;
             i++;
         }
-    }    
+    }
+    
+    
+    
+    // remove ALL duplicates from an already SORTED array
+    // makes a new array copying elements, array length may be reduced
+    public static String[] removeDuplicate(String[] words){
+		int leftIndex = 0, rightIndex = 1, duplicates = 0, realLength = words.length - duplicates;
+		while(rightIndex < realLength){
+			while(words[leftIndex].equals(words[rightIndex])  &&  rightIndex < realLength){ 
+				shiftLeft(words, 1 + rightIndex, -1 + realLength);
+				duplicates++;
+				realLength = words.length - duplicates;
+			}
+			rightIndex++;
+			leftIndex++;	
+		}
+		if(duplicates > 0){
+			String[] newWords = new String[realLength];
+			for(int i = 0; i < realLength; i++){
+				newWords[i] = words[i];
+			}
+			return newWords;
+		}else{
+			return words;
+		}
+	}
+	
+	        
 }
