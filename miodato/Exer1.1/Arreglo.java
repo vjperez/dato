@@ -24,11 +24,27 @@ public class Arreglo{
     // The caller should save array[b+1] before calling this function
     // and of course make sure index range a, a+1, ... b, b+1 is a 
     // valid range.
-    public static void shift(String[] array, int a, int b){
+    public static void shiftRight(String[] array, int a, int b){
         int index = b;
         while(index >= a){
             array[index + 1] = array[index];
             index--;
+        }
+    }
+    
+    
+    
+    
+    // Shifts 1 position to the LEFT every string from index a
+    // to index b, both inclusive
+    // The caller should save array[a-1] before calling this function
+    // and of course make sure index range a-1, a, a+1, ... b, b is a 
+    // valid range.
+    public static void shiftLeft(String[] array, int a, int b){
+        int index = a;
+        while(index <= b){
+            array[index - 1] = array[index];
+            index++;
         }
     }
     
@@ -76,7 +92,7 @@ public class Arreglo{
             int flag = where[0]; 
             int index = where[1]; 
             if(flag == 0 || flag == 1) index++; // 0 means value is a duplicate, 1 means insert AFTER, in either case insert after
-            shift(words, index, last);
+            shiftRight(words, index, last);
             words[index] = savedValue;
             
             last++; 

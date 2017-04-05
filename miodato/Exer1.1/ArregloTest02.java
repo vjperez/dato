@@ -11,8 +11,8 @@ public class ArregloTest02{
         In inputStream = new In(args[0]);
         String[] names = inputStream.readAllStrings();
         
-        int answer;
-        do{
+        int answer = 1; // any value that makes condition TRUE
+        while (answer >= 1 && answer <= 6){
             String name;
             int a, b;
             
@@ -22,7 +22,7 @@ public class ArregloTest02{
             }
             StdOut.println("");
             
-            StdOut.println("Select a function to work on the array.\n1:bubble sort,  2:insertion sort,  3:shift,  4:check index for insertion,  5:shuffle");
+            StdOut.println("Select a function to work on the array.\n1:bubble sort,  2:insertion sort,  3:shiftR,  4:check index for insertion,  5:shuffle,  6:shiftL");
             answer = StdIn.readInt();
             switch(answer){
             case 1:
@@ -36,7 +36,7 @@ public class ArregloTest02{
                 a = StdIn.readInt(); 
                 StdOut.println("write index b: ");  
                 b = StdIn.readInt();
-                Arreglo.shift(names, a, b);
+                Arreglo.shiftRight(names, a, b);
             break;
             case 4:
                 StdOut.println("Write name to check: "); 
@@ -54,8 +54,15 @@ public class ArregloTest02{
             case 5:
                 Arreglo.shuffle(names);
             break;
+            case 6:
+                StdOut.println("Write index a: ");  
+                a = StdIn.readInt(); 
+                StdOut.println("write index b: ");  
+                b = StdIn.readInt();
+                Arreglo.shiftLeft(names, a, b);
+            break;            
             default:break;
-            }
-        }while (answer >= 1 && answer <= 5);
+            } //switch
+        } //while
    }
 }
