@@ -3,6 +3,7 @@
  * shift, shuffle and to remove duplicates from an already sorted array
  * 
  */
+
 public class Arreglo{
     // bubble sort 
     public static void undeSort(String[] array){
@@ -91,7 +92,7 @@ public class Arreglo{
             int[] where = placementOf(savedValue, words, first, last);
             int flag = where[0]; 
             int index = where[1]; 
-            if(flag == 0 || flag == 1) index++; // 0 means value is a duplicate, 1 means insert AFTER, in either case insert after
+            if(flag == 1) index++; // a shift Right from index results in an insert before index. Add 1 to insert AFTER
             shiftRight(words, index, last);
             words[index] = savedValue;
             
