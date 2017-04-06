@@ -56,9 +56,9 @@ public class Arreglo{
     // Returns an array with 2 integers, indicating where string must be inserted in order 
     // to keep array sorted.
     // A result of:
-    // { 0,  index} means required String IS already found at "index"
-    // {-1,  index} means required String SHOULD BE placed before "index" to keep array SORTED
-    // { 1,  index} means required String SHOULD BE placed after  "index" to keep array SORTED
+    // { 0,  index} means "word" IS already found at "index= mid"
+    // {-1,  index} means "word" SHOULD BE placed before "index" to keep array SORTED
+    // { 1,  index} means "word" SHOULD BE placed after  "index" to keep array SORTED
     
     // Why is result array, in scope outsite this function ?? static scope ?
     
@@ -85,9 +85,9 @@ public class Arreglo{
     
     
     public static void insertionSort(String[] words){
-        int first = 0, last = 0, indexOutOfRange = 1;
-        while(indexOutOfRange < words.length){
-            String savedValue = words[indexOutOfRange];
+        int first = 0, last = 0, indexAfterLast = 1;
+        while(indexAfterLast < words.length){
+            String savedValue = words[indexAfterLast];
             int[] where = placementOf(savedValue, words, first, last);
             int flag = where[0]; 
             int index = where[1]; 
@@ -96,7 +96,7 @@ public class Arreglo{
             words[index] = savedValue;
             
             last++; 
-            indexOutOfRange++;
+            indexAfterLast++;
         }
     }
     
