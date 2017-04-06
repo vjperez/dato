@@ -115,19 +115,30 @@ public class Arreglo{
     
     
     
-    // remove ALL duplicates from an already SORTED array
-    // makes a new array copying elements, array length will be reduced
-    // if duplicates are found
+    // removes ALL duplicates from an already SORTED array
+    // makes a new copy of the array using only elements
+    // that are not repeated. Array length will be reduced
+    // if duplicates are found. Elements are shifted left but only 1 by 1.
+    
+    // improvements 
+    // option 1) shift by an amount greater than 1 when needed (avoids SOME unnecesary shifting)
+    // option 2) dont shift at all, just get location info of repeated elements on first transversal
+    // 			 then copy elements not repeated when doing a second transversal.
+    // option 3) can option 2 be done with only 1 transversal ?  I think so ;)
+    
     public static String[] removeDuplicate(String[] words){
 		int leftIndex = 0, rightIndex = 1, realLength = words.length;
 		while(rightIndex < realLength){
-			while(words[leftIndex].equals(words[rightIndex])  &&  rightIndex < realLength){ 
+			while(words[leftIndex].equals(words[rightIndex])){ 
 				shiftLeft(words, 1 + rightIndex, -1 + realLength);
 				realLength--;
+				if(!(rightIndex < realLength)) break; // when the last 2 elements are the same, there is nothing to shift left, and realLenght gets reduced, so the element at rightIndex is already out of range beacause rightIndex equals realLenght.
 			}
 			rightIndex++;
 			leftIndex++;	
 		}
+		// copy if necessary and return	
+		// this should be on a separate function
 		if(realLength < words.length){
 			String[] newWords = new String[realLength];
 			for(int i = 0; i < realLength; i++){
@@ -139,5 +150,7 @@ public class Arreglo{
 		}
 	}
 	
-	        
+	
+	
+        
 }
