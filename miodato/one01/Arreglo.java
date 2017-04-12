@@ -1,4 +1,4 @@
-/*
+/**
  * static functions to sort array using bubble sort and insertion sort,  
  * shift, shuffle and to remove duplicates from an already sorted array
  * 
@@ -20,12 +20,14 @@ public class Arreglo{
     
     
     
-    // Shifts 1 position to the RIGHT every string from index a
-    // to index b, both inclusive
-    // The caller should save array[b+1] before calling this function
-    // and of course make sure index range a, a+1, ... b, b+1 is a 
-    // valid range.
+/**   Shifts 1 position to the RIGHT every string from index a
+ *    to (bigger or equal) index b, both inclusive.
+ *    The caller should save array[b+1] before calling this function
+ *    and of course make sure index range a, a+1, ... b, b+1 is a 
+ *    valid range.
+ */
     public static void shiftRight(String[] array, int a, int b){
+        assert(a >= 0): "a can not be negative.";   assert(b+1 < array.length ): "b is out of bounds.";
         int index = b;
         while(index >= a){
             array[index + 1] = array[index];
@@ -36,12 +38,14 @@ public class Arreglo{
     
     
     
-    // Shifts 1 position to the LEFT every string from index a
-    // to index b, both inclusive
-    // The caller should save array[a-1] before calling this function
-    // and of course make sure index range a-1, a, a+1, ... b, b is a 
-    // valid range.
+/**   Shifts 1 position to the LEFT every string from index a
+ *    to index b, both inclusive.
+ *    The caller should save array[a-1] before calling this function
+ *    and of course make sure index range a-1, a, a+1, ... b, b is a 
+ *    valid range.
+ */   
     public static void shiftLeft(String[] array, int a, int b){
+        assert(a-1 >= 0): "a must be at least 1.";   assert(b < array.length ): "b is out of bounds.";
         int index = a;
         while(index <= b){
             array[index - 1] = array[index];
@@ -52,18 +56,19 @@ public class Arreglo{
     
     
     
-    // Receives a String array that must be SORTED from index "first" to "last", both inclusive. 
-    // It also receives a String as a parameter.
-    // Returns an array with 2 integers, indicating where string must be inserted in order 
-    // to keep array sorted.
-    // A result of:
-    // { 0,  index} means "word" IS already found at "index= mid"
-    // {-1,  index} means "word" SHOULD BE placed before "index" to keep array SORTED
-    // { 1,  index} means "word" SHOULD BE placed after  "index" to keep array SORTED
-    
-    // Why is result array, in scope outsite this function ?? static scope ?
-    
+/**   Receives a String array that must be SORTED from index "first" to "last", both inclusive. 
+ *    It also receives a String as a parameter.
+ *    Returns an array with 2 integers, indicating where string must be inserted in order 
+ *    to keep array sorted.
+ *    A result of:
+ *    { 0,  index} means "word" IS already found at "index= mid"
+ *    {-1,  index} means "word" SHOULD BE placed before "index" to keep array SORTED
+ *    { 1,  index} means "word" SHOULD BE placed after  "index" to keep array SORTED
+ *   
+ *    Why is result array, in scope outsite this function ?? static scope ?
+ */   
     public static int[] placementOf(String word, String[] words, int first, int last){
+        assert(first >= 0):"first must be non negative.";  assert(last < words.length):"last is out of bounds.";
         int mid;
         int[] result = new int[2];
         while(first <= last){
@@ -116,17 +121,17 @@ public class Arreglo{
     
     
     
-    // removes ALL duplicates from an already SORTED array
-    // makes a new copy of the array using only elements
-    // that are not repeated. Array length will be reduced
-    // if duplicates are found. Elements are shifted left but only 1 by 1.
-    
-    // improvements 
-    // option 1) shift by an amount greater than 1 when needed (avoids SOME unnecesary shifting)
-    // option 2) dont shift at all, just get location info of repeated elements on first transversal
-    // 			 then copy elements not repeated when doing a second transversal.
-    // option 3) can option 2 be done with only 1 transversal ?  I think so ;)
-    
+/**   Removes ALL duplicates from an already SORTED array.
+ *    makes a new copy of the array using only elements
+ *    that are not repeated. Array length will be reduced
+ *    if duplicates are found. Elements are shifted left but only 1 by 1.
+ *   
+ *    improvements 
+ *    option 1) shift by an amount greater than 1 when needed (avoids SOME unnecesary shifting)
+ *    option 2) dont shift at all, just get location info of repeated elements on first transversal
+ *    			 then copy elements not repeated when doing a second transversal.
+ *    option 3) can option 2 be done with only 1 transversal ?  I think so ;)
+ */   
     public static String[] removeDuplicate(String[] words){
 		int leftIndex = 0, rightIndex = 1, realLength = words.length;
 		while(rightIndex < realLength){
