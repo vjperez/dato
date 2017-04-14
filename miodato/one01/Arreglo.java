@@ -3,9 +3,14 @@
  * shift, shuffle and to remove duplicates from an already sorted array
  * 
  */
-
+ 
 public class Arreglo{
-    // bubble sort 
+    private Arreglo(){ }
+    
+    
+/** Bubble sorts an array of Strings
+ * @param String[]
+ */ 
     public static void undeSort(String[] array){
         for(int a = 0; a < -1 + array.length; a++){
             for(int b = -2 + array.length; b >= a; b--){
@@ -14,14 +19,16 @@ public class Arreglo{
                 }
             }
         }
-    //return array;
     }
     
     
     
     
-/**   Shifts 1 position to the RIGHT every string from index a
+/**   Shifts 1 position to the RIGHT every string char from index a
  *    to (bigger or equal) index b, both inclusive.
+ *    @param String[]
+ *    @param int a - lower index
+ *    @param int b - higher index
  *    The caller should save array[b+1] before calling this function
  *    and of course make sure index range a, a+1, ... b, b+1 is a 
  *    valid range.
@@ -38,8 +45,11 @@ public class Arreglo{
     
     
     
-/**   Shifts 1 position to the LEFT every string from index a
- *    to index b, both inclusive.
+/**   Shifts 1 position to the LEFT every string char from index a
+ *    to (bigger or equal) index b, both inclusive.
+ *    @param String[]
+ *    @param int a - lower index
+ *    @param int b - higher index
  *    The caller should save array[a-1] before calling this function
  *    and of course make sure index range a-1, a, a+1, ... b, b is a 
  *    valid range.
@@ -56,11 +66,15 @@ public class Arreglo{
     
     
     
-/**   Receives a String array that must be SORTED from index "first" to "last", both inclusive. 
- *    It also receives a String as a parameter.
- *    Returns an array with 2 integers, indicating where string must be inserted in order 
+/**
+ *    Returns an array with 2 integers, indicating where a string must be inserted in order 
  *    to keep array sorted.
- *    A result of:
+ *    @param String array that must be SORTED from index "first" to "last", both inclusive. 
+ *    @param a String to be inserted into the String array.
+ *    @param int a - lower index
+ *    @param int b - higher index
+ * 
+ *    @return int[] result with the following meaning:
  *    { 0,  index} means "word" IS already found at "index= mid"
  *    {-1,  index} means "word" SHOULD BE placed before "index" to keep array SORTED
  *    { 1,  index} means "word" SHOULD BE placed after  "index" to keep array SORTED
@@ -89,7 +103,9 @@ public class Arreglo{
     
     
     
-    
+/** Sorts an array of Strings using "insertion after shifting" into an already sorted portion.
+ * @param String[]
+ */     
     public static void insertionSort(String[] words){
         int first = 0, last = 0, indexAfterLast = 1;
         while(indexAfterLast < words.length){
@@ -97,7 +113,7 @@ public class Arreglo{
             int[] where = placementOf(savedValue, words, first, last);
             int flag = where[0]; 
             int index = where[1]; 
-            if(flag == 1) index++; // a shift Right from index results in an insert before index. Add 1 to insert AFTER
+            if(flag == 1) index++; // a shift Right from index results in an insert before value at index. Add 1 to insert AFTER value at index
             shiftRight(words, index, last);
             words[index] = savedValue;
             
@@ -107,7 +123,9 @@ public class Arreglo{
     }
     
     
-    
+/** Shuffles an array of Strings using Math.random.
+ * @param String[]
+ */     
     public static void shuffle(String[] words){
         int howMany = words.length;
         int i = 0;
@@ -122,10 +140,9 @@ public class Arreglo{
     
     
 /**   Removes ALL duplicates from an already SORTED array.
- *    makes a new copy of the array using only elements
- *    that are not repeated. Array length will be reduced
- *    if duplicates are found. Elements are shifted left but only 1 by 1.
- *   
+ *    Makes a new copy of the array without duplicates.
+ *    Elements are removed by shifting left, but only 1 by 1.
+ *    @param String[] - array to remove duplicates from
  *    improvements 
  *    option 1) shift by an amount greater than 1 when needed (avoids SOME unnecesary shifting)
  *    option 2) dont shift at all, just get location info of repeated elements on first transversal
@@ -156,6 +173,11 @@ public class Arreglo{
 		}
 	}
 	
+    
+    
+    
+    // public static void analyzeArray(String[] words){} 
+    // Is it sorted? Where are the duplicates?    
 	
 	
         
