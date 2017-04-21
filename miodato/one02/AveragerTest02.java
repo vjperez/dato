@@ -3,6 +3,7 @@
  * and their average.
  * Name of file containing tests scores must be supplied as command
  * line argument.
+ * java  AveragerTest02 testScores.txt
  */
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
