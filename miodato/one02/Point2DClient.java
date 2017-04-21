@@ -13,7 +13,10 @@ public class Point2DClient{
     private Point2DClient(){}
     
     public static void main(String[] args){
+    try{
+        
         int n = Integer.parseInt(args[0]);
+        if(n < 2) throw new IllegalArgumentException("" + n + "");
         Point2D[] puntos = new Point2D[n];
         //StdDraw.setCanvasSize(800, 800);
         //StdDraw.setXscale(0, 100);
@@ -46,6 +49,18 @@ public class Point2DClient{
         StdDraw.setPenRadius();
         StdDraw.setPenColor(StdDraw.RED);
         puntos[indexOfPoint1].drawTo(puntos[indexOfPoint2]);
+        
+        
+    }catch(ArrayIndexOutOfBoundsException aioob){
+            StdOut.println("\nVictor says : Program needs a command line argument.\n");
+            aioob.printStackTrace();
+    }catch(NumberFormatException nf){
+            StdOut.println("\nVictor says : You need to provide an INTEGER as a command line argument.\n");
+            nf.printStackTrace();
+    }catch(IllegalArgumentException ia){
+            StdOut.println("\nVictor says : Program makes no sense for less than 2 points, " + ia.getMessage() + " not a valid argument.\n");
+            ia.printStackTrace();
     }
-
+    
+    }// main  
 }
