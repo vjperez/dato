@@ -16,7 +16,7 @@ public class Point2DClient{
     try{
         
         int n = Integer.parseInt(args[0]);
-        if(n < 2) throw new IllegalArgumentException("" + n + "");
+        if(n < 2) throw new IllegalArgumentException(n + "");
         Point2D[] puntos = new Point2D[n];
         //StdDraw.setCanvasSize(800, 800);
         //StdDraw.setXscale(0, 100);
