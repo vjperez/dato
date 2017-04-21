@@ -15,6 +15,7 @@ public class AveragerTest{
     int testNumber = 0;
     Averager victorAverage = new Averager("victor test average");
     
+    StdDraw.setCanvasSize(1200, 700);
     StdDraw.setXscale(0, maxNumberOfTests);
     StdDraw.setYscale(-20, 120);
     StdDraw.setPenRadius(0.010);

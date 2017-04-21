@@ -15,6 +15,7 @@ public class AveragerTest02{
   public static void main(String[] args){  
     In in = new In(args[0]);
     double[] tests = in.readAllDoubles();
+    StdDraw.setCanvasSize(1200, 700);
     StdDraw.setXscale(-1, 1 + tests.length);
     StdDraw.setYscale(-20, 120);
     StdDraw.setPenRadius(0.010);
