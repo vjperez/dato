@@ -1,3 +1,5 @@
+package one01;
+
 /**
  * static functions to sort array using bubble sort and insertion sort,  
  * shift, shuffle and to remove duplicates from an already sorted array
