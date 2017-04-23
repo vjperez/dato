@@ -10,6 +10,7 @@
  */
 
 import edu.princeton.cs.algs4.StdOut;
+import one01.TimeInterval;
 
 class FibonacciWithArrayTest{
     public static void main(String[] args){
