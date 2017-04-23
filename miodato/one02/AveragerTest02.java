@@ -1,3 +1,4 @@
+
 /**
  * Reads a set of values from a text file and plots them
  * and their average.
@@ -8,6 +9,7 @@
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.Point2D;
+import one02.Averager;
 
 public class AveragerTest02{
   private AveragerTest02(){}  

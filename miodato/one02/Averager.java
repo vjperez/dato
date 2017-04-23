@@ -1,3 +1,5 @@
+package one02;
+
 /**
  * Keeps a total and the amount of elements (N), to be used to calculate
  * an average. 
@@ -8,7 +10,7 @@ public class Averager{
     private final String name;
     
     //Constructor
-    Averager(String name){
+    public Averager(String name){
         this.name = name;
     }
     

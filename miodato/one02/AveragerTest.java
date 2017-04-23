@@ -1,3 +1,4 @@
+
 /**
  * Reads a set of values from standard input (java  AveragerTest < testScores.txt) and plots them
  * and their average.
@@ -5,6 +6,7 @@
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.Point2D;
+import one02.Averager;
 
 public class AveragerTest{
   private AveragerTest(){}  
