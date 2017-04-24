@@ -33,7 +33,8 @@ class AnotherTimeIntervalTest{
         intervalo02.stop();
         StdOut.println("\nAfter input, java.util.date based diff: " + intervalo01); // uses toString()
         StdOut.println("Duration after input, java.time.Duration based: " + intervalo02);
-        StdOut.println("get nano: " + intervalo02.getDuration().getNano());
+        StdOut.printf("get nano: " + "%,d", intervalo02.getDuration().getNano());
+        StdOut.println("");
     }
 }
  
