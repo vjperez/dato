@@ -40,5 +40,3 @@ public class AnotherTimeInterval{
         return hrs + " hrs:   " + mins + " min:   " + secondsValue + " sec:   " + millis + " millisec:   "  + micros + " micros:   " + nanoValue + " nanos"; 
     }
 }
-
-

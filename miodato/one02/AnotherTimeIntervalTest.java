@@ -16,7 +16,7 @@ class AnotherTimeIntervalTest{
         StdOut.println("\nAfter 2 print instructions, java.util.date based diff: " + intervalo01.getMilliSecondsDiference() + " milliseconds.");
         StdOut.println("Duration after 2 print instructions, java.time.Duration based: " + intervalo02.getDuration());
         StdOut.println("");
-        for(byte b = 0; b < 100; b++) { // using 128 or bigger, you get an overflow and infinite loop 
+        for(byte b = 0; b < 100; b++) { // using 128 or bigger, you get an overflow and an infinite loop 
                 StdOut.print(b + " : ");
         }        
         StdOut.println("");
