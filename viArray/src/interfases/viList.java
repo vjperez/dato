@@ -17,7 +17,23 @@ public interface viList<E>{
 
     public boolean remove(int index);
 
-    //public boolean remove(E elm);
-
     public int firstIndex(E elm);
+
+    public int lastIndex(E elm);
+
+    public boolean remove(E elm);
+
+    public boolean contains(E elm);
+
+    //big oh (n^2)
+    public int    removeAll_O_N2(E elm); 
+
+    //big oh (n)
+    public int    removeAll_O_N(E elm);
+
+    public void clear();
+
+    public E first();
+
+    public E last();
 }

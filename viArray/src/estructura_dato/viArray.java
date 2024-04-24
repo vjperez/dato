@@ -28,7 +28,7 @@ public class viArray<E> implements viList<E>{
         return this.nextIndex == 0;
     }
 
-    //not on interface, full and resize only needed when List implemented on array
+    //not on interface, isFull() and enlargeArray() only needed when List implemented on array
     public boolean isFull(){
         return this.nextIndex == this.elementos.length;
     }
@@ -82,11 +82,94 @@ public class viArray<E> implements viList<E>{
     public int firstIndex(E elm){
         int index = -1;
         for(int i = 0; i < this.size(); i++){
-            this.elementos[i] = this.elementos[i + 1];
+            if( elm.equals( this.elementos[i] ))  return i;
         }
         return index;
     }
+
+    public int lastIndex(E elm){
+        int index = -1;
+        for(int i = -1 + this.size(); i >= 0; i--){
+            if( elm.equals( this.elementos[i] ))  return i;
+        }
+        return index;
+    }  
+
+    public boolean remove(E elm){
+        int at =  this.firstIndex(elm);
+        if(at >= 0) return this.remove( at );
+        else return false;
+    }  
+
+    public boolean contains(E elm){
+        int at =  this.firstIndex(elm);
+        if(at >= 0) return true;
+        else return false;        
+    }
+
+    //big oh n^2
+    public int removeAll_O_N2(E elm){
+        int removed = 0;
+
+        //remove(elm) uses firstIndex(elm) together with remove(index)
+        //firstIndex(elm) will start from index 0 on every while iteration, 
+            //which is unnecessary since elm is known not to be there
+        //remove(index) will shift left all elements, from index to "index less than size()""
+            //which is inefficient since elm could be there again, 
+            //and following iterations will end up shifting left the same values, 
+            //multiple times but only 1 position to the left
+        while( remove(elm) ) removed++;
+
+        return removed;
+    }
+
+    //big oh n
+    public int removeAll_O_N(E elm){
+        int shiftAmount = 0;
+
+        int firstIndex = -1;
+        for(int i = 0; i < this.size(); i++){
+            if( elm.equals( this.elementos[i] )){
+                firstIndex = i;
+                shiftAmount++;
+                break;
+            }
+        }
+        //no first index found, nothing removed, no shifting, return zero
+        if(firstIndex == -1) return shiftAmount;
+
+        //inside while, either shiftAmount is increased, which removes copy of found elm
+        //or a shift left is done
+        //increasing shiftAmount makes it possible to shift elements, one 1 time by multiple positions,
+        //instead of multiple times by 1 position
+        while(firstIndex + shiftAmount < this.size()){
+            if( elm.equals( this.elementos[ firstIndex + shiftAmount] )){
+                shiftAmount++;
+            }else{
+                this.elementos[firstIndex] = this.elementos[ firstIndex + shiftAmount ];
+                firstIndex++;
+            }
+        }
+        //inside the for, the last "shiftAmount" positions are set to null
+        for(int i = -shiftAmount + this.size(); i < this.size(); i++){
+            this.elementos[i] = null;   //helping with garbage collection
+        }
+        //nextIndex is decremented
+        this.nextIndex -= shiftAmount;
+        return shiftAmount;
+    }
+
+    public void clear(){
+        for(int i = 0; i < this.size(); i++){
+           this.elementos[i] = null; 
+        }
+        this.nextIndex = 0;
+    }
+
+    public E first(){ return this.elementos[0]; }
+
+    public E last(){ return this.elementos[-1 + this.nextIndex]; }
  
-    //toString() : implemention from Object class
+    public toString() : implemention from Object class
     //public String 
 }//viArray
