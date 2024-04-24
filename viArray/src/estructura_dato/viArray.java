@@ -170,6 +170,15 @@ public class viArray<E> implements viList<E>{
 
     public E last(){ return this.elementos[-1 + this.nextIndex]; }
  
-    public toString() : implemention from Object class
-    //public String 
+    //toString() from Object class 
+    public String toString(){
+        String str = "[ ";
+        for(int n = 0; n < this.size(); n++){
+            if ((n + 1) == this.size())           str += this.get(n)       ;
+            else                                  str += this.get(n) + ", ";
+        }
+        str += " ]";
+        return str;
+    }
+    
 }//viArray
