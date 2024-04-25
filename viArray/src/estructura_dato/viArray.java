@@ -54,7 +54,6 @@ public class viArray<E> implements viList<E>{
         for(int i = 0; i < this.elementos.length; i++){
             largerArray[i] = this.elementos[i];
             this.elementos[i] = null;  //helping with garbage collection
-            i++;
         }
         this.elementos = largerArray;
     }
@@ -180,7 +179,7 @@ public class viArray<E> implements viList<E>{
  
     //toString() from Object class 
     public String toString(){
-        String str = "[ ";
+        String str = "Capacity:" + this.elementos.length + " :: [ ";
         for(int n = 0; n < this.size(); n++){
             if ((n + 1) == this.size())           str += this.get(n)       ;
             else                                  str += this.get(n) + ", ";

@@ -5,7 +5,7 @@ import interfases.viList;
 
 public class viArrayTest{
     public static void main(String[] args){
-        viList <String> lista = new viArray <String>();
+        viList <String> lista = new viArray <String>(1);
         lista.add("victor");  
         System.out.println( lista );
         lista.add("rosa");
