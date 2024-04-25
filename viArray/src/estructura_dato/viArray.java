@@ -1,6 +1,7 @@
 package estructura_dato;
 
 import interfases.viList;
+import java.util.NoSuchElementException;
 
 //casting an object[] to E[] throws a warning for an unchecked operation
 //this supresses the warning
@@ -166,9 +167,16 @@ public class viArray<E> implements viList<E>{
         this.nextIndex = 0;
     }
 
-    public E first(){ return this.elementos[0]; }
+    public E first(){ 
+        if( this.isEmpty() ) throw new NoSuchElementException();
+        return this.elementos[0]; 
+        
+    }
 
-    public E last(){ return this.elementos[-1 + this.nextIndex]; }
+    public E last(){ 
+        if( this.isEmpty() ) throw new NoSuchElementException();
+        return this.elementos[-1 + this.nextIndex]; 
+    }
  
     //toString() from Object class 
     public String toString(){

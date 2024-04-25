@@ -46,8 +46,6 @@ public class viArrayTest{
         */
 
         viList <Integer> listaInt = new viArray <Integer>();
-        listaInt.first();
-        System.out.println( listaInt );
         listaInt.add(1);
         System.out.println( listaInt );
         listaInt.add(1,2);
@@ -63,8 +61,9 @@ public class viArrayTest{
 
         listaInt.clear();
         System.out.println( listaInt );
-        listaInt.first();
-        System.out.println( listaInt );
+    
+        //System.out.println( "first: " + listaInt.first() );  //exception
+
 
         //print with classic for
         /*
