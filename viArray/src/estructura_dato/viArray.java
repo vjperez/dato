@@ -60,7 +60,7 @@ public class viArray<E> implements viList<E>{
     }
 
     public E get(int index){
-        if (index < 0  ||  index >= nextIndex) throw new IndexOutOfBoundsException();
+        //if (index < 0  ||  index >= nextIndex) throw new IndexOutOfBoundsException();
         return this.elementos[index]; 
     }
 
@@ -167,12 +167,13 @@ public class viArray<E> implements viList<E>{
         }
         this.nextIndex = 0;
         */
-       
+
        //use remove(index) to clear list, sending always last valid index as parameter
        //using last index, there is no shifting
        //remove(index) will set values to null and adjust this.nextIndex
        //Also if a reduceArray() function is implemented, there is no need to call it here
-       //It may only be called on remove(index) and removeAll_O_N(E elm) 
+       //It may only be called on remove(index) and removeAll_O_N(E elm).  
+       //Not on removeAll_O_N2(E elm),  which ends up calling remove(index) 
         for(int i = -1 + this.size(); i >= 0; i--){
            this.remove(i);
         }       
@@ -197,6 +198,14 @@ public class viArray<E> implements viList<E>{
             else                                  str += this.get(n) + ", ";
         }
         str += " ]";
+
+        str += "\t\tNulls:: [ ";
+        for(int n = this.size(); n < this.elementos.length; n++){
+            if ((n + 1) == this.elementos.length) str += this.get(n)       ;
+            else                                  str += this.get(n) + ", ";
+        }
+        str += " ]";
+
         return str;
     }
     

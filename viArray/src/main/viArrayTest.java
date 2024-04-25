@@ -40,6 +40,17 @@ public class viArrayTest{
         System.out.println( lista );
         lista.removeAll_O_N2("viso");
         System.out.println( lista );
+        lista.clear();
+        System.out.println( lista );
+        lista.add("victor");  
+        System.out.println( lista );
+        lista.add("victor");  
+        System.out.println( lista );
+        lista.add("victor");  
+        System.out.println( lista );  
+
+        lista.removeAll_O_N("victor");
+        System.out.println( lista );      
 
         //print with classic for
         /*
