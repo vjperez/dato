@@ -26,7 +26,11 @@ public class viArrayTest{
         System.out.println( lista );
         lista.add("victor");
         System.out.println( lista );
-        lista.removeAll_O_N("victor");
+
+        toUpper( lista );
+        System.out.println( lista );
+
+        lista.removeAll_O_N("Victor");
         System.out.println( lista );
         lista.add(0,"viso");
         System.out.println( lista );
@@ -77,5 +81,13 @@ public class viArrayTest{
 
         //print with Iterator
         //are there online unit tests for these ?
+    }
+
+    public static void toUpper( viList<String> list){
+        for(int n = 0; n < list.size(); n++){
+            String firstLetterToUpper = String.valueOf( list.get(n).charAt(0) ).toUpperCase();
+            String otherLetters = list.get(n).substring(1);
+            list.set( n,  firstLetterToUpper + otherLetters  ) ;
+        }
     }
 }
