@@ -60,7 +60,7 @@ public class viArray<E> implements viList<E>{
     }
 
     public E get(int index){
-        //if (index < 0  ||  index >= nextIndex) throw new IndexOutOfBoundsException();
+        if (index < 0  ||  index >= nextIndex) throw new IndexOutOfBoundsException();
         return this.elementos[index]; 
     }
 
@@ -198,14 +198,18 @@ public class viArray<E> implements viList<E>{
             else                                  str += this.get(n) + ", ";
         }
         str += " ]";
-
+        
+        //remove indexOutBoundsException on get(index), and uncomment following code 
+        //if you want to print null values on rest of array
+        /*
         str += "\t\tNulls:: [ ";
         for(int n = this.size(); n < this.elementos.length; n++){
             if ((n + 1) == this.elementos.length) str += this.get(n)       ;
             else                                  str += this.get(n) + ", ";
         }
         str += " ]";
-
+        */
+        
         return str;
     }
     
