@@ -75,7 +75,7 @@ public class viArray<E> implements viList<E>{
         for(int i = index; i + 1 < this.size(); i++){
             this.elementos[i] = this.elementos[i + 1];
         }
-        this.elementos[-1 + this.size()] = null;   //helping with garbage collection
+        this.elementos[-1 + this.size()] = null;   //helping with garbage collection.  Used on this.clear()
         this.nextIndex--;                
         return true;
     }
@@ -161,10 +161,21 @@ public class viArray<E> implements viList<E>{
     }
 
     public void clear(){
+        /*
         for(int i = 0; i < this.size(); i++){
            this.elementos[i] = null; 
         }
         this.nextIndex = 0;
+        */
+       
+       //use remove(index) to clear list, sending always last valid index as parameter
+       //using last index, there is no shifting
+       //remove(index) will set values to null and adjust this.nextIndex
+       //Also if a reduceArray() function is implemented, there is no need to call it here
+       //It may only be called on remove(index) and removeAll_O_N(E elm) 
+        for(int i = -1 + this.size(); i >= 0; i--){
+           this.remove(i);
+        }       
     }
 
     public E first(){ 
