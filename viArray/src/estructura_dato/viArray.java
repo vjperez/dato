@@ -9,14 +9,15 @@ import java.util.NoSuchElementException;
 public class viArray<E> implements viList<E>{
     private int nextIndex;
     private E[] elementos;
+    private static final int arrayInitialCapacity = 3;
 
     public viArray(int length){
         this.nextIndex = 0;
         this.elementos = ( E[] ) new Object[ length ];
     }
-    //calls other constructor with default array length of 8
+    //calls other constructor with default array length 
     public viArray(){
-        this(8);
+        this( viArray.arrayInitialCapacity );
     }
 
 
