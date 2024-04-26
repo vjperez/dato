@@ -49,6 +49,11 @@ public class viSinglyLinkList<E> implements viList<E>{
         return str;
     }
 
+    public void set(int index, E elm){
+        if(index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
+        this.getNode(index).setElemento(elm);
+    }
+
     public E get(int index){
         if(index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
         return this.getNode(index).getElemento();

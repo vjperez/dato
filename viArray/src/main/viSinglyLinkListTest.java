@@ -8,6 +8,7 @@ public class viSinglyLinkListTest{
         viList <String> lista = new viSinglyLinkList<String> ();
         System.out.println( lista );
         lista.add("victor");
+        toUpper(lista);
         System.out.println( lista );
 
         viList <Integer> listaInt = new viSinglyLinkList<Integer> ();
@@ -23,7 +24,7 @@ public class viSinglyLinkListTest{
         for(int n = 0; n < list.size(); n++){
             String firstLetterToUpper = String.valueOf( list.get(n).charAt(0) ).toUpperCase();
             String otherLetters = list.get(n).substring(1);
-            //list.set( n,  firstLetterToUpper + otherLetters  ) ;
+            list.set( n,  firstLetterToUpper + otherLetters  ) ;
         }
     }
 }
