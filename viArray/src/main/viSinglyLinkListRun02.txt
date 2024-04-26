@@ -1,0 +1,13 @@
+lista : String
+[  ]
+[ Victor ]
+[ Victor, cheo ]
+[ Victor, cheo, rosa ]
+[ Victor, rosa ]
+[ rosa ]
+[  ]
+
+listaInt : Integer
+[  ]
+[ 1024 ]
+[  ]

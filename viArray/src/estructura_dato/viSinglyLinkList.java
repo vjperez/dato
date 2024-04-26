@@ -29,14 +29,47 @@ public class viSinglyLinkList<E> implements viList<E>{
         if(index == 0){
             toAdd.setNext( this.head );
             this.head = toAdd;
-            this.size++;
         }else{
             Nodo<E> previous = this.getNode(-1 + index);
             toAdd.setNext( previous.getNext() );
             previous.setNext( toAdd );
-            this.size++;
         }
+        this.size++;
     }    
+
+    public boolean remove(int index){
+        if(index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
+        if(this.isEmpty())  throw new NoSuchElementException();
+        Nodo<E> toRemove = this.getNode(index);
+        if(index == 0){
+            this.head = toRemove.getNext();            
+        }else{
+            Nodo<E> previous = this.getNode( -1 + index );
+            previous.setNext( toRemove.getNext() );
+        }
+        toRemove.clear();
+        this.size--;
+        return true;        
+    }
+
+    public boolean remove(E elm){
+        if(this.isEmpty())  throw new NoSuchElementException();
+        
+        //head references the node with 'index' 0
+        //currentNodo and i advance at the same time
+        Nodo<E> currentNodo = this.head;
+        for(int i = 0;
+            i < this.size;
+            i++, currentNodo = currentNodo.getNext() )
+        {
+                if(elm.equals( currentNodo.getElemento() ))  return  remove(i);
+        }
+
+        return false; 
+    }
+
+
+
 
     //toString() from Object class 
     public String toString(){
@@ -61,10 +94,15 @@ public class viSinglyLinkList<E> implements viList<E>{
 
     public Nodo<E> getNode(int index){
         if(index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
+    
+        //head references the node with 'index' 0
+        //currentNodo and i, advance at the same time
         Nodo<E> currentNodo = this.head;
-        for(int n = 0; n < index; n++){
-            currentNodo = currentNodo.getNext();
-        }
+        for(int i = 0;   
+            i < index;   
+            i++, currentNodo = currentNodo.getNext() )
+        {}//for has empty body
+            
         return currentNodo;
     }  
 

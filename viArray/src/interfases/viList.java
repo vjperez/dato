@@ -15,13 +15,13 @@ public interface viList<E>{
 
     public void set(int index, E elm);
 
-    //public boolean remove(int index);
+    public boolean remove(int index);
 
     //public int firstIndex(E elm);
 
     //public int lastIndex(E elm);
 
-    //public boolean remove(E elm);
+    public boolean remove(E elm);
 
     //public boolean contains(E elm);
 
