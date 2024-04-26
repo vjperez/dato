@@ -37,10 +37,16 @@ public class viSinglyLinkListTest{
         //int was used here to test it!
         int a = 22, b = 33, c = 40, d = 33; 
         Integer e = 55;
-        listaInt.add(a); listaInt.add(b); listaInt.add(c); listaInt.add(d); listaInt.add(e);
+        Integer f = 99;
+        listaInt.add(a); listaInt.add(b); listaInt.add(c); listaInt.add(d); listaInt.add(e); listaInt.add(f);
         System.out.println("\nlistaInt : Integer");
         System.out.println( listaInt );
-        System.out.println("first index of 33: " + listaInt.firstIndex(33) + "\tlast index of 33: " + listaInt.lastIndex(33));
+        System.out.println("first index of 33: " + listaInt.firstIndex(33) + "\tlast index of 33: " + listaInt.lastIndex(33) );
+        System.out.println("first : " + listaInt.first() + "\tlast : " + listaInt.last() );
+        System.out.println("contains 22 : " + listaInt.contains(22) + "\tcontains 40: " + listaInt.contains(40) + "\tcontains 99: " + listaInt.contains(99) );
+        
+        listaInt.clear();
+        System.out.println( listaInt );
 
 
         //print with Iterator

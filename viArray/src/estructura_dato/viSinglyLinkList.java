@@ -100,6 +100,43 @@ public class viSinglyLinkList<E> implements viList<E>{
         return indexOfElm;
     }
 
+    public boolean contains(E elm){
+        if(this.isEmpty())  throw new NoSuchElementException();
+        
+        //head references the node with 'index' 0
+        //currentNodo and i advance at the same time
+        Nodo<E> currentNodo = this.head;
+        for(int i = 0;
+            i < this.size;
+            i++, currentNodo = currentNodo.getNext() )
+        {
+                if(elm.equals( currentNodo.getElemento() ))  return true;
+        }
+
+        return false; 
+    }
+
+    public void clear(){
+        if(this.isEmpty())  return;
+        
+        int firstIndex = 0, times = this.size;
+        for(int n = 0; n < times; n++){
+            this.remove(firstIndex);
+        }
+    }
+
+    public E first(){
+        if(this.isEmpty())  throw new NoSuchElementException();
+        
+        return this.getNode(0).getElemento();
+    }
+
+    public E last(){
+        if(this.isEmpty())  throw new NoSuchElementException();
+        
+        return this.getNode(-1 + this.size).getElemento();
+    }
+
 
 
     //toString() from Object class 
