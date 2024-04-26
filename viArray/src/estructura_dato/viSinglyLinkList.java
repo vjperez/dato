@@ -119,8 +119,8 @@ public class viSinglyLinkList<E> implements viList<E>{
     public void clear(){
         if(this.isEmpty())  return;
         
-        int firstIndex = 0, times = this.size;
-        for(int n = 0; n < times; n++){
+        int firstIndex = 0;
+        while( ! this.isEmpty()){
             this.remove(firstIndex);
         }
     }
