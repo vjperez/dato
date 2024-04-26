@@ -117,11 +117,11 @@ public class viSinglyLinkList<E> implements viList<E>{
     }
 
     public void clear(){
-        if(this.isEmpty())  return;
-        
+        //if(this.isEmpty())  return;
         int firstIndex = 0;
         while( ! this.isEmpty()){
             this.remove(firstIndex);
+            //this.remove( this.getNode(firstIndex).getElemento() ) ;
         }
     }
 
