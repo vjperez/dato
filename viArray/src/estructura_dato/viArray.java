@@ -119,7 +119,7 @@ public class viArray<E> implements viList<E>{
             //which is inefficient since elm could be there again, 
             //and following iterations will end up shifting left the same values, 
             //multiple times but only 1 position to the left
-        while( remove(elm) ) removed++;
+        while( this.remove(elm) ) removed++;
 
         return removed;
     }
