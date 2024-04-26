@@ -17,9 +17,9 @@ public interface viList<E>{
 
     public boolean remove(int index);
 
-    //public int firstIndex(E elm);
+    public int firstIndex(E elm);
 
-    //public int lastIndex(E elm);
+    public int lastIndex(E elm);
 
     public boolean remove(E elm);
 

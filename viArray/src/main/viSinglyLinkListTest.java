@@ -32,6 +32,16 @@ public class viSinglyLinkListTest{
         listaInt.remove(n);  //make sure class Integer is used as node element, remove(Integer element) , otherwise remove(index) is used
         System.out.println( listaInt );
 
+        //firstIndex() and lastIndex() has no conflict between int vs Integer
+        //it is better to stick with class Integer for node elements
+        //int was used here to test it!
+        int a = 22, b = 33, c = 40, d = 33; 
+        Integer e = 55;
+        listaInt.add(a); listaInt.add(b); listaInt.add(c); listaInt.add(d); listaInt.add(e);
+        System.out.println("\nlistaInt : Integer");
+        System.out.println( listaInt );
+        System.out.println("first index of 33: " + listaInt.firstIndex(33) + "\tlast index of 33: " + listaInt.lastIndex(33));
+
 
         //print with Iterator
     }

@@ -68,6 +68,37 @@ public class viSinglyLinkList<E> implements viList<E>{
         return false; 
     }
 
+    public int firstIndex(E elm){
+        if(this.isEmpty())  throw new NoSuchElementException();
+        
+        //head references the node with 'index' 0
+        //currentNodo and i advance at the same time
+        Nodo<E> currentNodo = this.head;
+        for(int i = 0;
+            i < this.size;
+            i++, currentNodo = currentNodo.getNext() )
+        {
+                if(elm.equals( currentNodo.getElemento() ))  return i;
+        }
+
+        return -1;  
+    }   
+
+    public int lastIndex(E elm){
+        if(this.isEmpty())  throw new NoSuchElementException();
+        int indexOfElm = -1;
+        //head references the node with 'index' 0
+        //currentNodo and i advance at the same time
+        Nodo<E> currentNodo = this.head;
+        for(int i = 0;
+            i < this.size;
+            i++, currentNodo = currentNodo.getNext() )
+        {
+                if(elm.equals( currentNodo.getElemento() ))  indexOfElm = i;
+        }
+
+        return indexOfElm;
+    }
 
 
 
