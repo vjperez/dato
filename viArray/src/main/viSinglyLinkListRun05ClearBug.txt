@@ -1,0 +1,20 @@
+lista : String
+[  ]
+[ Victor ]
+[ Victor, cheo ]
+[ Victor, cheo, rosa ]
+[ Victor, rosa ]
+[ rosa ]
+[  ]
+
+listaInt : Integer
+[  ]
+[ 1024 ]
+[  ]
+
+listaInt : Integer
+[ 22, 33, 40, 33, 55, 99 ]
+first index of 33: 1	last index of 33: 3
+first : 22	last : 99
+contains 22 : true	contains 40: true	contains 99: true
+[ 33, 33, 99 ]
