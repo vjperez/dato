@@ -31,6 +31,8 @@ public interface viList<E>{
     //big oh (n)
     //public int    removeAll_O_N(E elm);
 
+    public int removeAll(E elm);
+
     public void clear();
 
     public E first();

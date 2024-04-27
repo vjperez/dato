@@ -109,7 +109,7 @@ public class viArray<E> implements viList<E>{
     }
 
     //big oh n^2
-    public int removeAll_O_N2(E elm){
+    private int removeAll_O_N2(E elm){
         int removed = 0;
 
         //remove(elm) uses firstIndex(elm) together with remove(index)
@@ -125,7 +125,7 @@ public class viArray<E> implements viList<E>{
     }
 
     //big oh n
-    public int removeAll_O_N(E elm){
+    private int removeAll_O_N(E elm){
         int shiftAmount = 0;
 
         int firstIndex = -1;
@@ -158,6 +158,10 @@ public class viArray<E> implements viList<E>{
         //nextIndex is decremented
         this.nextIndex -= shiftAmount;
         return shiftAmount;
+    }
+
+    public int removeAll(E elm){
+        return removeAll_O_N(elm);
     }
 
     public void clear(){

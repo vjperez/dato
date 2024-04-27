@@ -30,7 +30,7 @@ public class viArrayTest{
         toUpper( lista );
         System.out.println( lista );
 
-        lista.removeAll_O_N("Victor");
+        lista.removeAll("Victor");
         System.out.println( lista );
         lista.add(0,"viso");
         System.out.println( lista );
@@ -38,7 +38,7 @@ public class viArrayTest{
         System.out.println( lista );
         lista.add("viso");
         System.out.println( lista );
-        lista.removeAll_O_N2("viso");
+        lista.removeAll("viso");
         System.out.println( lista );
         lista.clear();
         System.out.println( lista );
@@ -49,7 +49,7 @@ public class viArrayTest{
         lista.add("victor");  
         System.out.println( lista );  
 
-        lista.removeAll_O_N("victor");
+        lista.removeAll("victor");
         System.out.println( lista );      
 
         //print with classic for
