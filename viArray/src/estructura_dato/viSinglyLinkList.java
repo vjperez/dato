@@ -68,6 +68,28 @@ public class viSinglyLinkList<E> implements viList<E>{
         return false; 
     }
 
+    public int removeAll(E elm){
+        if(this.isEmpty())  throw new NoSuchElementException();
+        
+        //head references the node with 'index' 0
+        //currentNodo and i advance at the same time
+        int foundCount = 0;
+        Nodo<E> nextNodo;
+
+        Nodo<E> currentNodo = this.head;
+        int i = 0;
+        while(i < this.size + foundCount){
+            nextNodo = currentNodo.getNext();
+            if(elm.equals( currentNodo.getElemento() )){
+                this.remove(-foundCount + i);
+                foundCount++;
+            }
+            i++;
+            currentNodo = nextNodo;
+        }
+        return foundCount;        
+    }
+
     public int firstIndex(E elm){
         if(this.isEmpty())  throw new NoSuchElementException();
         
@@ -117,7 +139,6 @@ public class viSinglyLinkList<E> implements viList<E>{
     }
 
     public void clear(){
-        //if(this.isEmpty())  return;
         int firstIndex = 0;
         while( ! this.isEmpty()){
             this.remove(firstIndex);

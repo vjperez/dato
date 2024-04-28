@@ -7,30 +7,35 @@ public class viSinglyLinkListTest{
     public static void main(String[] args){
         System.out.println("lista : String");
         viList <String> lista = new viSinglyLinkList<String> ();
-        System.out.println( lista );
+        System.out.println(  "\t"  + lista );
         lista.add("victor");
         toUpper(lista);
-        System.out.println( lista );
+        System.out.println(  "\t"  + lista );
         lista.add("cheo");
-        System.out.println( lista );
+        System.out.println(  "\t"  + lista );
         lista.add("rosa");
-        System.out.println( lista );        
+        System.out.println(  "\t"  + lista );        
+        
+        System.out.println( "remove cheo ..." );
         lista.remove("cheo");
-        System.out.println( lista );
+        System.out.println(  "\t"  + lista );
+        System.out.println( "remove Victor ..." );
         lista.remove("Victor");
-        System.out.println( lista );
+        System.out.println(  "\t"  + lista );
+        System.out.println( "remove rosa ..." );
         lista.remove("rosa");
-        System.out.println(lista );        
+        System.out.println( "\t" + lista );        
 
 
         System.out.println("\nlistaInt : Integer");
         viList <Integer> listaInt = new viSinglyLinkList<Integer> ();
-        System.out.println(listaInt );
+        System.out.println( "\t" + listaInt );
         Integer n = 1024;  //if int is used, add(int) is implicitly casted to add(Integer), remove(int) produces outOfBoundException
         listaInt.add(n);
-        System.out.println( listaInt );
+        System.out.println(  "\t"  + listaInt );
+        System.out.println( "remove " + n + " ..." );
         listaInt.remove(n);  //make sure class Integer is used as node element, remove(Integer element) , otherwise remove(index) is used
-        System.out.println( listaInt );
+        System.out.println(  "\t"  + listaInt );
 
         //firstIndex() and lastIndex() has no conflict between int vs Integer
         //it is better to stick with class Integer for node elements
@@ -40,13 +45,25 @@ public class viSinglyLinkListTest{
         Integer f = 99;
         listaInt.add(a); listaInt.add(b); listaInt.add(c); listaInt.add(d); listaInt.add(e); listaInt.add(f);
         System.out.println("\nlistaInt : Integer");
-        System.out.println( listaInt );
+        System.out.println(  "\t"  + listaInt );
         System.out.println("first index of 33: " + listaInt.firstIndex(33) + "\tlast index of 33: " + listaInt.lastIndex(33) );
         System.out.println("first : " + listaInt.first() + "\tlast : " + listaInt.last() );
         System.out.println("contains 22 : " + listaInt.contains(22) + "\tcontains 40: " + listaInt.contains(40) + "\tcontains 99: " + listaInt.contains(99) );
         
+        listaInt.add(0, 33);  
+        listaInt.add(33);
+        System.out.println(  "\t"  + listaInt );
+        System.out.println("first index of 33: " + listaInt.firstIndex(33) + "\tlast index of 33: " + listaInt.lastIndex(33) );
+        System.out.println("first : " + listaInt.first() + "\tlast : " + listaInt.last() );
+        System.out.println("contains 22 : " + listaInt.contains(22) + "\tcontains 40: " + listaInt.contains(40) + "\tcontains 99: " + listaInt.contains(99) );        
+
+        System.out.println( "remove all 33's ..." );
+        int many = listaInt.removeAll( b );
+        System.out.println("removed " + many + " instances of " + b + " ...");
+        System.out.println(  "\t"  + listaInt );
+        System.out.println( "clear it..." );
         listaInt.clear();
-        System.out.println( listaInt );
+        System.out.println(  "\t"  + listaInt );
 
 
         //print with Iterator
