@@ -22,8 +22,12 @@ public class viSinglyLinkListTest{
         System.out.println( "remove Victor ..." );
         lista.remove("Victor");
         System.out.println(  "\t"  + lista );
-        System.out.println( "remove rosa ..." );
-        lista.remove("rosa");
+        System.out.println( "replace rosa ..." );
+        //lista.set(1,"tita");  out of bound exception
+        lista.set(0,"tita");
+        System.out.println( "\t" + lista );
+        System.out.println( "remove tita ..." );
+        lista.remove("tita");
         System.out.println( "\t" + lista );        
 
 
