@@ -77,15 +77,16 @@ public class viSinglyLinkList<E> implements viList<E>{
         Nodo<E> nextNodo;
 
         Nodo<E> currentNodo = this.head;
-        int i = 0;
-        while(i < this.size + foundCount){
-            nextNodo = currentNodo.getNext();
-            if(elm.equals( currentNodo.getElemento() )){
-                this.remove(-foundCount + i);
-                foundCount++;
-            }
-            i++;
-            currentNodo = nextNodo;
+        for(int i = 0;
+            i < this.size + foundCount;
+            i++, currentNodo = nextNodo
+            )
+        {
+                nextNodo = currentNodo.getNext();
+                if(elm.equals( currentNodo.getElemento() )){
+                    this.remove(-foundCount + i);
+                    foundCount++;
+                }
         }
         return foundCount;        
     }
