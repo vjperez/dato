@@ -71,11 +71,17 @@ public class viSinglyLinkList<E> implements viList<E>{
     public int removeAll(E elm){
         if(this.isEmpty())  throw new NoSuchElementException();
         
-        //head references the node with 'index' 0
-        //currentNodo and i advance at the same time
         int foundCount = 0;
         Nodo<E> nextNodo;
 
+        //'i' is based on original list without removing anything
+        //after removing, 'this.size' changes, to account for that, 
+            //'foundCount' is added on 'for' condition
+        //the index of element to be removed, is also based on original list, so ...
+            //'foundCount' is substracted when removing
+        
+        //head references the node with 'index' 0
+        //currentNodo and i advance at the same time        
         Nodo<E> currentNodo = this.head;
         for(int i = 0;
             i < this.size + foundCount;
