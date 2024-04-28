@@ -30,11 +30,16 @@ public class viSinglyLinkListTest{
         System.out.println("\nlistaInt : Integer");
         viList <Integer> listaInt = new viSinglyLinkList<Integer> ();
         System.out.println( "\t" + listaInt );
-        Integer n = 1024;  //if int is used, add(int) is implicitly casted to add(Integer), remove(int) produces outOfBoundException
+        //if int is used, add(int) is implicitly casted to add(Integer), 
+        //with remove(int) that is a problem and could produce outOfBoundException, since remove(E elm)
+        //is interpreted as remove(int) where int is the index
+        Integer n = 1024;  
         listaInt.add(n);
         System.out.println(  "\t"  + listaInt );
         System.out.println( "remove " + n + " ..." );
-        listaInt.remove(n);  //make sure class Integer is used as node element, remove(Integer element) , otherwise remove(index) is used
+        //make sure class Integer is used as node element, remove(Integer element),
+        //otherwise remove(int) is used, where int is an index 
+        listaInt.remove(n);
         System.out.println(  "\t"  + listaInt );
 
         //firstIndex() and lastIndex() has no conflict between int vs Integer
