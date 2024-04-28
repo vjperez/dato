@@ -65,6 +65,13 @@ public class viSinglyLinkListTest{
         listaInt.clear();
         System.out.println(  "\t"  + listaInt );
 
+        System.out.println( "removeAll() after single insert ..." );
+        listaInt.add(f);
+        System.out.println(  "\t"  + listaInt );
+        many = listaInt.removeAll(f);
+        System.out.println("removed " + many + " instances of " + f + " ...");
+        System.out.println(  "\t"  + listaInt );
+
 
         //print with Iterator
     }

@@ -80,7 +80,7 @@ public class viSinglyLinkList<E> implements viList<E>{
         for(int i = 0;
             i < this.size + foundCount;
             i++, currentNodo = nextNodo
-            )
+           )
         {
                 nextNodo = currentNodo.getNext();
                 if(elm.equals( currentNodo.getElemento() )){
