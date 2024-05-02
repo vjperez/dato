@@ -38,8 +38,8 @@ public class viSinglyLinkList<E> implements viList<E>{
     }    
 
     public boolean remove(int index){
-        if(index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
         if(this.isEmpty())  throw new NoSuchElementException();
+        if(index < 0 || index >= this.size) throw new IndexOutOfBoundsException();
         Nodo<E> toRemove = this.getNode(index);
         if(index == 0){
             this.head = toRemove.getNext();            

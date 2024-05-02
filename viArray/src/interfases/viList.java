@@ -11,6 +11,8 @@ public interface viList<E>{
 
     public void add(int index, E elm);
 
+    //void addBefore(E elm, E ref);
+
     public E get(int index);
 
     public void set(int index, E elm);
@@ -38,4 +40,6 @@ public interface viList<E>{
     public E first();
 
     public E last();
+
+    //int count(E rem);
 }
