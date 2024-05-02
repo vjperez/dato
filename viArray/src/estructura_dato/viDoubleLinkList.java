@@ -10,8 +10,13 @@ public class viDoubleLinkList<E> implements viList<E>{
 
     public viDoubleLinkList(){
         this.size = 0;
-        this.head = new Nodo<E> ( );  // = new Nodo<E> (null, this.rabo, null) 
-        this.rabo = new Nodo<E> ( );  // = new Nodo<E> (this.head, null, null) 
+        /* 
+        getPrev() will be null if you do it this way
+        this.head = new Nodo<E> (null, this.rabo, null);
+        this.rabo = new Nodo<E> (this.head, null, null);
+        */
+        this.head = new Nodo<E> ( );  
+        this.rabo = new Nodo<E> ( );   
         this.head.next = this.rabo;
         this.rabo.prev = this.head;
     }
