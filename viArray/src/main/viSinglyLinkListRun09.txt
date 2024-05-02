@@ -1,0 +1,57 @@
+lista: String
+	[  ]
+
+adding victor,  toUpper()...
+	[ Victor ]
+
+adding cheo...
+	[ Victor, cheo ]
+
+adding rosa...
+	[ Victor, cheo, rosa ]
+
+remove cheo ...
+	[ Victor, rosa ]
+
+remove Victor ...
+	[ rosa ]
+
+replace rosa, set(0, tita) ...
+	[ tita ]
+
+remove (tita) ...
+	[  ]
+
+
+listaInt: Integer
+	[  ]
+
+add 1024...
+	[ 1024 ]
+
+remove(1024)...
+	[  ]
+
+listaInt: Integer 
+add five numbers..
+	[ 22, 33, 40, 33, 55, 99 ]
+first index of 33: 1	last index of 33: 3
+first : 22	last : 99
+contains 22 : true	contains 40: true	contains 99: true
+
+add 33, at index 0, then add 33 ...
+	[ 33, 22, 33, 40, 33, 55, 99, 33 ]
+first index of 33: 0	last index of 33: 7
+first : 33	last : 33
+contains 22 : true	contains 40: true	contains 99: true
+
+remove All 33's ...
+removed 4 instances of 33 ...
+	[ 22, 40, 55, 99 ]
+clear it...
+	[  ]
+
+removeAll() after single add of 99 ...
+	[ 99 ]
+removed 1 instances of 99 ...
+	[  ]
