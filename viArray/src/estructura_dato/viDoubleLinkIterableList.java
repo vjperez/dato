@@ -209,13 +209,13 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
 
         Iterator iterador = this.iterator();
         while( iterador.hasNext() ){
-            str += iterador.next() + "  ";
+            str += iterador.next() + " ";
             /*
             if ((n + 1) == this.size())           str += this.get(n)       ;
             else                                  str += this.get(n) + ", ";
             */
         }
-        str += " ]";
+        str += "]";
         return str;
     }
 
