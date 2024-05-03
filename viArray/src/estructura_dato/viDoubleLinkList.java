@@ -11,9 +11,13 @@ public class viDoubleLinkList<E> implements viList<E>{
     public viDoubleLinkList(){
         this.size = 0;
         /* 
-        getPrev() will be null if you do it this way
-        this.head = new Nodo<E> (null, this.rabo, null);
-        this.rabo = new Nodo<E> (this.head, null, null);
+        if you do it this way, this.head.next is initialized to this.rabo while it is null
+        ... this.head.getNext() is the node returned by this.getNode(0, elm) when you want to add
+        on an empty list, it is supposed to be this.rabo to add before it, but instead
+        it is null. So the instruction, Nodo<E> left  = toBeOnRight.getPrev(); on this.add(0, elm)
+        ends up calling null.getPrev(), ... a run time exception
+                this.head = new Nodo<E> (null, this.rabo, null);
+                this.rabo = new Nodo<E> (this.head, null, null);
         */
         this.head = new Nodo<E> ( );  
         this.rabo = new Nodo<E> ( );   
@@ -222,11 +226,13 @@ public class viDoubleLinkList<E> implements viList<E>{
 
     //returns node at index, or
     //the dummy node at end (rabo), when index == this.size.
+    //In either case,  this.add(index, elm), will add to the left
+    //of the node returned by this.getNode(index)
     //In the worst case, moves on half the list
     //Benefits from having this.rabo dummy node and prev references
     public Nodo<E> getNode(int index){
         //when index == this.size, this implementation returns the dummy node
-        //this.rabo, so do not throw exception in that case
+        //this.rabo, so do not throw exception when index == this.size
         if(index < 0 || index > this.size) throw new IndexOutOfBoundsException();
         
         if(index <= (this.size / 2)){//start from head, moving to next
