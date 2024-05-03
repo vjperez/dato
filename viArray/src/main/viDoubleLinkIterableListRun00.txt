@@ -1,23 +1,23 @@
 lista double link iterable: String
-	[  ]
+	[ ]
 
 adding victor,  toUpper()...
-	[ Victor   ]
+	[ Victor ]
 
 adding cheo...
-	[ Victor  cheo   ]
+	[ Victor cheo ]
 
 adding rosa...
-	[ Victor  cheo  rosa   ]
+	[ Victor cheo rosa ]
 
 remove cheo ...
-	[ Victor  rosa   ]
+	[ Victor rosa ]
 
 remove Victor ...
-	[ rosa   ]
+	[ rosa ]
 
 replace rosa, set(0, tita) ...
-	[ tita   ]
+	[ tita ]
 
 remove (tita) ...
-	[  ]
+	[ ]
