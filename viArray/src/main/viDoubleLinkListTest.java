@@ -3,6 +3,8 @@ package main;
 import estructura_dato.viDoubleLinkList;
 import interfases.viList;
 
+import java.util.Iterator;
+
 public class viDoubleLinkListTest{
     public static void main(String[] args){
         viList <String> lista = new viDoubleLinkList<String> ();
@@ -97,6 +99,10 @@ public class viDoubleLinkListTest{
 
 
         //print with Iterator
+        listaInt.add(a); listaInt.add(b); listaInt.add(c); listaInt.add(d); listaInt.add(e); listaInt.add(f);
+        System.out.println("\nlistaInt double link : Integer \nadd five numbers..");       
+
+        Iterator<Integer> iterador =  listaInt.iterator(); 
     }
 
     public static void toUpper( viList<String> list){
