@@ -1,0 +1,23 @@
+lista double link iterable: String
+	list using iterator [ ] - using enhanced for loop [ ]
+
+adding victor,  toUpper()...
+	list using iterator [ Victor ] - using enhanced for loop [ Victor ]
+
+adding cheo...
+	list using iterator [ Victor cheo ] - using enhanced for loop [ Victor cheo ]
+
+adding rosa...
+	list using iterator [ Victor cheo rosa ] - using enhanced for loop [ Victor cheo rosa ]
+
+remove cheo ...
+	list using iterator [ Victor rosa ] - using enhanced for loop [ Victor rosa ]
+
+remove Victor ...
+	list using iterator [ rosa ] - using enhanced for loop [ rosa ]
+
+replace rosa, set(0, tita) ...
+	list using iterator [ tita ] - using enhanced for loop [ tita ]
+
+remove (tita) ...
+	list using iterator [ ] - using enhanced for loop [ ]

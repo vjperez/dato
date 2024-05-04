@@ -205,17 +205,23 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
     //toString() from Object class 
     //implemented using iterator
     public String toString(){
-        String str = "[ ";
+        String str = "list using iterator [ ";
 
         Iterator iterador = this.iterator();
         while( iterador.hasNext() ){
             str += iterador.next() + " ";
             /*
-            if ((n + 1) == this.size())           str += this.get(n)       ;
-            else                                  str += this.get(n) + ", ";
+            str += this.get(n) + ", ";
             */
         }
         str += "]";
+
+        str += " - using enhanced for loop [ ";
+        for(E elm: this){
+            str += elm + " ";
+        }
+        str += "]";
+
         return str;
     }
 
