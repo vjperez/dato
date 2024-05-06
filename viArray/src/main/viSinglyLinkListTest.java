@@ -9,7 +9,6 @@ public class viSinglyLinkListTest{
         System.out.println("lista: String");
         System.out.println(  "\t"  + lista );
 
-
         lista.add("victor");
         toUpper(lista);
         System.out.println(  "\nadding victor,  toUpper()..." );
