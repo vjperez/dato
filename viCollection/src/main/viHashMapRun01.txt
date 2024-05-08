@@ -1,0 +1,95 @@
+hashTable:separate addressing: Integer
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+
+
+ put()  key:value   30:89     replaced value:null
+	doublelinklist using iterator: [ 30:89 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+
+
+ put()  key:value   32:25     replaced value:null
+	doublelinklist using iterator: [ 30:89 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+ put()  key:value   30:15     replaced value:89   same key, diferent value!
+	doublelinklist using iterator: [ 30:15 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+ put()  key:value   90:88     replaced value:null
+	doublelinklist using iterator: [ 90:88 30:15 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+ put()  key:value   120:42     replaced value:null
+	doublelinklist using iterator: [ 120:42 90:88 30:15 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+ put()  key:value   30:15     replaced value:15   same key and same value!
+	doublelinklist using iterator: [ 30:15 120:42 90:88 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+ put()  key:value   121:4     replaced value:null
+	doublelinklist using iterator: [ 30:15 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+:get()  key:30     value:15
+	doublelinklist using iterator: [ 30:15 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+:get()  key:32     value:25
+	doublelinklist using iterator: [ 30:15 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+:get()  key:99     value:null
+	doublelinklist using iterator: [ 30:15 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+:get()  key:120     value:42
+	doublelinklist using iterator: [ 30:15 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+:get()  key:90     value:88
+	doublelinklist using iterator: [ 30:15 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+:remove()  key:30     removed value:15
+	doublelinklist using iterator: [ 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ 32:25 ]
+
+
+:remove()  key:32     removed value:25
+	doublelinklist using iterator: [ 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ ]
+
+
+:remove()  key:99     removed value:null
+	doublelinklist using iterator: [ 120:42 90:88 ]
+	doublelinklist using iterator: [ 121:4 ]
+	doublelinklist using iterator: [ ]
+
