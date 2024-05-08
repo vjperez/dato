@@ -40,9 +40,9 @@ public class viArray<E> implements viList<E>{
     }
 
     public void add(int index, E elm){
-        if (index < 0  ||  index > nextIndex) throw new IndexOutOfBoundsException();
+        if (index < 0  ||  index > this.nextIndex) throw new IndexOutOfBoundsException();
         if(this.isFull()) this.enlargeArray();
-        for(int i = nextIndex; i > index; i--){
+        for(int i = this.nextIndex; i > index; i--){
             this.elementos[i] = this.elementos[i - 1];
         }
         this.elementos[index] = elm;  
@@ -60,18 +60,19 @@ public class viArray<E> implements viList<E>{
     }
 
     public E get(int index){
-        if (index < 0  ||  index >= nextIndex) throw new IndexOutOfBoundsException();
+        if (index < 0  ||  index >= this.nextIndex) throw new IndexOutOfBoundsException();
         return this.elementos[index]; 
     }
 
     //could be implemented to return the replaced element
     public void set(int index, E elm){
-        if (index < 0  ||  index >= nextIndex) throw new IndexOutOfBoundsException();
+        if (index < 0  ||  index >= this.nextIndex) throw new IndexOutOfBoundsException();
         this.elementos[index] = elm;
     }
-
+    
+    //removing at index( -1 + this.size() ) is o(1), there is shifting for other indexes
     public boolean remove(int index){
-        if (index < 0  ||  index >= nextIndex) throw new IndexOutOfBoundsException();
+        if (index < 0  ||  index >= this.nextIndex) throw new IndexOutOfBoundsException();
         for(int i = index; i + 1 < this.size(); i++){
             this.elementos[i] = this.elementos[i + 1];
         }
@@ -173,7 +174,7 @@ public class viArray<E> implements viList<E>{
         */
 
        //use remove(index) to clear list, sending always last valid index as parameter
-       //using last index, there is no shifting
+       //removing at index( -1 + this.size() ) is o(1), there is shifting for other indexes
        //remove(index) will set values to null and adjust this.nextIndex
        //Also if a reduceArray() function is implemented, there is no need to call it here
        //It may only be called on remove(index) and removeAll_O_N(E elm).  
