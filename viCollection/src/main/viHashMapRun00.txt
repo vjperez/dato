@@ -1,0 +1,49 @@
+hashTable:separate addressing: Integer
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+
+
+put 703, 89
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 703:89 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+
+
+put 70, 25
+	doublelinklist using iterator: [ 70:25 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 703:89 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+
+
+put 73, 15
+	doublelinklist using iterator: [ 70:25 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 73:15 703:89 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+
+
+put 706, 4
+	doublelinklist using iterator: [ 70:25 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 73:15 703:89 ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ ]
+	doublelinklist using iterator: [ 706:4 ]
+

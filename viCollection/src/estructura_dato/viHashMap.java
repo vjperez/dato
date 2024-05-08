@@ -44,17 +44,13 @@
         int index = hkObj.hashTheKey( key );
         viDoubleLinkIterableList< Bucket<K, V> > bucketList = this.buckets.get( index );
 
-        V value = null;
-
-        Bucket<K, V> bucket;
         for(int i = 0; i < bucketList.size(); i++){
-            bucket = bucketList.get(i);
+            Bucket<K, V> bucket = bucketList.get(i);
             if( bucket.getKey() == key ) { 
-                value = bucket.getVal();
-                break;
+                return bucket.getVal();
             }
         }
-        return value;
+        return null;  // key not found
     }
 
     public V put(K key, V value){
@@ -62,58 +58,46 @@
         
         int index = hkObj.hashTheKey( key );
         viDoubleLinkIterableList< Bucket<K, V> > bucketList = this.buckets.get( index );
-        V removedValue = null;
         Bucket<K, V> bucketToPut = new Bucket<K, V> (key, value);
 
         int i = 0;
-        Bucket<K, V> bucket;
         while( i < bucketList.size() ){
-            bucket = bucketList.get(i);
+            Bucket<K, V> bucket = bucketList.get(i);
             if( bucket.getKey() == key ) {
-                removedValue = bucket.getVal();
+                V removedValue = bucket.getVal();
                 bucket.clear();//helping with garbage collection.
                 bucketList.remove(i);
                 bucketList.add(0, bucketToPut);
-                //this.size stays equals, this is really, a value bucket replace or set, with diferent value
-                break;
+                //this.size stays equals, this is really, replace(key, value) . What if value is also the same?
+                return removedValue;
             }
-            bucket = bucketList.get(i);
-            i++;
+            i++; 
         }  
 
-        if( i == bucketList.size() ){
-            removedValue = null;
-            bucketList.add(0, bucketToPut);
-            this.size++;
-        }
-
-        return removedValue;
+        //instead of replace(key, value), this is putting pair when key is absent 
+        bucketList.add(0, bucketToPut);
+        this.size++;
+        return null;
     }
 
     public V remove(K key){
         int index = hkObj.hashTheKey( key );
         viDoubleLinkIterableList< Bucket<K, V> > bucketList = this.buckets.get( index );
-
+        
         int i = 0;
-        Bucket<K, V> bucket = bucketList.get(i);
-        // check i < size first, so it can short circuit 
-        // when i == size(), there is dummy node (rabo) on the bucketList, so bucket will be null
-        while( i < bucketList.size()   &&   bucket.getKey() != key ){
-            bucket = bucketList.get(i);
+        while( i < bucketList.size() ){
+            Bucket<K, V> bucket = bucketList.get(i);
+            if( bucket.getKey() == key ){
+                V removedValue = bucket.getVal();
+                bucket.clear();//helping with garbage collection.
+                bucketList.remove(i);
+                this.size--;
+                return removedValue;
+            }
             i++;
         }  
-
-        V removedValue;
-
-        if( i < bucketList.size() ){//bucket.getKey() == key
-            removedValue = bucket.getVal();
-            bucket.clear();//helping with garbage collection.
-            bucketList.remove(i);
-            this.size--;
-        }else{//i == bucketList.size()
-            removedValue = null;//not found
-        }
-        return removedValue;
+        //nothing removed, nothing happened, wasted time just looping
+        return null;
     }
 
     public void clear(){
