@@ -64,7 +64,7 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
         Nodo<E> previous = toRemove.getPrev();
         previous.setNext( toRemove.getNext() );
         toRemove.getNext().setPrev( previous );
-        toRemove.clear();
+        toRemove.clear();//helping with garbage collection.
         this.size--;
         return true;        
     }
@@ -182,6 +182,11 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
         return false; 
     }
 
+    //remove(index) will use getNode(index) to get node to remove
+    //getNode(index) at worst case, will move over half the list, from the start or end depending on index
+    //Both getNode(0) and getNode( -1 + this.size ), will get node on O(1)
+    //getNode(0) do not enter for loop, getNode( -1 + this.size ) will enter for loop for only 1 iteration
+    //so we clear from index  0
     public void clear(){
         int firstIndex = 0;
         while( ! this.isEmpty()){
@@ -205,7 +210,7 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
     //toString() from Object class 
     //implemented using iterator
     public String toString(){
-        String str = "list using iterator [ ";
+        String str = "doublelinklist using iterator: [ ";
 
         Iterator iterador = this.iterator();
         while( iterador.hasNext() ){
@@ -215,13 +220,15 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
             */
         }
         str += "]";
-
+        
+        /*
         str += " - using enhanced for loop [ ";
         for(E elm: this){
             str += elm + " ";
         }
         str += "]";
-
+        */
+        
         return str;
     }
 
@@ -344,7 +351,7 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
             Nodo<E> right = this.nodo.getNext();
             left.setNext ( this.nodo.getNext() );
             right.setPrev( this.nodo.getPrev() );
-            this.nodo.clear();
+            this.nodo.clear(); //helping with garbage collection.
             this.nodo = right;
         }
     }//viIterator

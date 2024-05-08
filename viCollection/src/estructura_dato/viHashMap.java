@@ -124,6 +124,15 @@
         return  this.get(key)  !=  null;
     }
 
+    public String toString(){
+        String str = "";
+        for(int out = 0; out < this.buckets.size(); out++){
+            viDoubleLinkIterableList< Bucket<K, V> > bucketList = this.buckets.get( out );
+            str += bucketList.toString() +  '\n';
+        }
+        return str;
+    }
+
 
     private class Bucket<K, V>{
         private K key;
