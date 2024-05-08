@@ -1,40 +1,47 @@
  package estructura_dato;
 
+ import interfases.hashKey;
  import interfases.viMap;
  
  import estructura_dato.viArray;
  import estructura_dato.viDoubleLinkIterableList;
-
- import java.util.NoSuchElementException;
  
  public class viHashMap<K, V> implements viMap<K, V>{
     private int size;
     private viArray< viDoubleLinkIterableList< Bucket<K, V> >> buckets;
 
-    private hashKeyInterface<K> hkiObj;
-    //a small prime number, as lenght for underlying viArray
-    private static final int InitialCapacity = 11;
+    private hashKey<K> hkObj;
+    
 
-    public viHashMap(int length, hashKeyInterface<K> hkiObj){
+
+    //a small prime number, as lenght for underlying viArray
+    //private static final int InitialCapacity = 11;
+    //calls other constructor with default hashmap initial capacity for viArray 
+    /*
+    public viHashMap( hashKey<K> hkObj ){
+        this( viHashMap.InitialCapacity, hkObj );
+    }
+    */
+
+    public viHashMap(int length, hashKey<K> hkObj){
         this.size = 0;
         this.buckets = new viArray< viDoubleLinkIterableList< Bucket<K, V> >> ( length ); 
         for(int i = 0; i < length; i++){
             buckets.add ( new viDoubleLinkIterableList< Bucket<K, V> >() );
         }
-        this.hkiObj = hkiObj;
+        this.hkObj = hkObj;
     }
-    //calls other constructor with default hashmap initial capacity for viArray 
-    public viHashMap( hashKeyInterface<K> hkiObj ){
-        this( viHashMap.InitialCapacity, hkiObj );
-    }
+
     //add a constructor that receives a viHashMap and returns a 'copy' of itself
+
+
 
     public int size(){ return this.size; }
 
     public boolean isEmpty(){ return this.size == 0; }
 
     public V get(K key){
-        int index = hkiObj.hashTheKey( key );
+        int index = hkObj.hashTheKey( key );
         viDoubleLinkIterableList< Bucket<K, V> > bucketList = this.buckets.get( index );
 
         V value = null;
@@ -53,37 +60,38 @@
     public V put(K key, V value){
         if ( key == null  ||  value == null ) throw new IllegalArgumentException();
         
-        int index = hkiObj.hashTheKey( key );
+        int index = hkObj.hashTheKey( key );
         viDoubleLinkIterableList< Bucket<K, V> > bucketList = this.buckets.get( index );
+        V removedValue = null;
+        Bucket<K, V> bucketToPut = new Bucket<K, V> (key, value);
 
         int i = 0;
-        Bucket<K, V> bucket = bucketList.get(i);
-        // check index < size first, so it can short circuit 
-        //when i == size(), there is dummy node (rabo) on the bucketList, so bucket will be null
-        while( i < bucketList.size()   &&   bucket.getKey() != key ){
+        Bucket<K, V> bucket;
+        while( i < bucketList.size() ){
+            bucket = bucketList.get(i);
+            if( bucket.getKey() == key ) {
+                removedValue = bucket.getVal();
+                bucket.clear();//helping with garbage collection.
+                bucketList.remove(i);
+                bucketList.add(0, bucketToPut);
+                //this.size stays equals, this is really, a value bucket replace or set, with diferent value
+                break;
+            }
             bucket = bucketList.get(i);
             i++;
         }  
 
-        V removedValue;
-        Bucket<K, V> bucketToPut = new Bucket<K, V> (key, value);
-
-        if( i < bucketList.size() ){//bucket.getKey() == key
-            removedValue = bucket.getVal();
-            bucket.clear();//helping with garbage collection.
-            bucketList.remove(i);
-            bucketList.add(0, bucketToPut);
-            //this.size stays equals, this is really, a value bucket replace or set, with diferent value
-        }else{//i == bucketList.size()
+        if( i == bucketList.size() ){
             removedValue = null;
             bucketList.add(0, bucketToPut);
             this.size++;
         }
+
         return removedValue;
     }
 
     public V remove(K key){
-        int index = hkiObj.hashTheKey( key );
+        int index = hkObj.hashTheKey( key );
         viDoubleLinkIterableList< Bucket<K, V> > bucketList = this.buckets.get( index );
 
         int i = 0;
@@ -128,7 +136,7 @@
         String str = "";
         for(int out = 0; out < this.buckets.size(); out++){
             viDoubleLinkIterableList< Bucket<K, V> > bucketList = this.buckets.get( out );
-            str += bucketList.toString() +  '\n';
+            str += '\t' + bucketList.toString() +  '\n';
         }
         return str;
     }
@@ -149,12 +157,7 @@
         }
         public K getKey()  { return this.key; }
         public V getVal(  ){ return this.value; }
+        public String toString() {  return this.key + ":" + this.value;  }
     }//Bucket class
-
-
-    private interface hashKeyInterface<K>{
-        public int hashTheKey(K key);
-    }//hk interfase
-
 
  }//viHashMap class
