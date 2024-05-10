@@ -83,11 +83,17 @@ public class viDoubleLinkIterableListTest{
         System.out.println(  "\nlast index luisa..." );
         System.out.println(  "\t"  + lista.lastIndex("luisa") );
 
+        System.out.println(  "\ncontains luisa..." );
+        System.out.println(  "\t"  + lista.contains("luisa") );
+
         System.out.println(  "\nfirst index luiso..." );
         System.out.println(  "\t"  + lista.firstIndex("luiso") );
 
         System.out.println(  "\nlast index luiso..." );
         System.out.println(  "\t"  + lista.lastIndex("luiso") );
+
+        System.out.println(  "\ncontains luiso..." );
+        System.out.println(  "\t"  + lista.contains("luiso") );
 
         lista.removeAll("evelyn");
         System.out.println( "\nremoveAll evelyn ..." );

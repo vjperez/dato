@@ -149,27 +149,7 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
 
     public boolean contains(E elm){
         if(this.isEmpty())  throw new NoSuchElementException();
-        
-        //head.getNext() references the node with 'index' 0
-        //currentNodo and i advance at the same time
-        Nodo<E> currentNodo = this.head.getNext();
-        for(int i = 0;
-            i < this.size;
-            i++, currentNodo = currentNodo.getNext() )
-        {
-                if(elm.equals( currentNodo.getElemento() ))  return true;
-        }
-/*
-        //start at rabo, moving to prev
-        Nodo<E> currentNodo = this.rabo.getPrev();
-        for(int i = -1 + this.size;
-            i >= 0;
-            i--, currentNodo = currentNodo.getPrev() )
-        {
-                if(elm.equals( currentNodo.getElemento() ))  return  true;
-        }
-*/
-        return false; 
+        return  this.lastIndex(elm)  >  -1; 
     }
 
     //remove(index) will use getNode(index) to get node to remove
