@@ -204,6 +204,7 @@ public class viDoubleLinkList<E> implements viList<E>{
 
 
     //toString() from Object class 
+    //get(n) will use getNode() and move over list for every n value - O(n2)
     public String toString(){
         String str = "[ ";
         for(int n = 0; n < this.size(); n++){

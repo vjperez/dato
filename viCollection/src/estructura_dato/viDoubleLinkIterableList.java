@@ -22,8 +22,8 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
         */
         this.head = new Nodo<E> ( );  
         this.rabo = new Nodo<E> ( );   
-        this.head.next = this.rabo;
-        this.rabo.prev = this.head;
+        this.head.next = this.rabo;//this.head.prev and this.head.elemento remains null
+        this.rabo.prev = this.head;//this.rabo.next and this.rabo.elemento remains null
     }
 
     //returns size of the list
@@ -71,17 +71,16 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
 
     public boolean remove(E elm){
         if(this.isEmpty())  throw new NoSuchElementException();
-        
-        //head.getNext() references the node with 'index' 0
-        //currentNodo and i advance at the same time
-        Nodo<E> currentNodo = this.head.getNext();
-        for(int i = 0;
-            i < this.size;
-            i++, currentNodo = currentNodo.getNext() )
-        {
-                if(elm.equals( currentNodo.getElemento() ))  return  remove(i);
+               
+        for(viIterator<E> iter = this.iterator(); iter.hasNext(); ){
+            //iterator not needed after removing, so dont used iter.getNode()
+            //and iter.setNode() to save a reference.  See removeAll(elm) 
+            if(elm.equals( iter.next() )){
+                iter.remove();
+                this.size--;
+                return  true;
+            }
         }
-
 /*
         //start at rabo, moving to prev
         Nodo<E> currentNodo = this.rabo.getPrev();
@@ -99,27 +98,18 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
         if(this.isEmpty())  throw new NoSuchElementException();
         
         int foundCount = 0;
-        Nodo<E> nextNodo;
+        for(viIterator<E> iter = this.iterator(); iter.hasNext(); ){
+            //saving a reference to come back after removing, needed because
+            //iterator is still needed after removing
+            Nodo<E> savedCurrent = iter.getNode();
+            if(elm.equals( iter.next() )){
+                
+                iter.remove();
+                iter.setNode( savedCurrent ); // after removing, back to where you came from
+                this.size--;
 
-        //'i' is based on original list without removing anything
-        //after removing, 'this.size' changes, to account for that, 
-            //'foundCount' is added on 'for' condition
-        //the index of element to be removed, is also based on original list, so ...
-            //'foundCount' is substracted when removing
-        
-        //head.getNext() references the node with 'index' 0
-        //currentNodo and i advance at the same time        
-        Nodo<E> currentNodo = this.head.getNext();
-        for(int i = 0;
-            i < this.size + foundCount;
-            i++, currentNodo = nextNodo
-           )
-        {
-                nextNodo = currentNodo.getNext();
-                if(elm.equals( currentNodo.getElemento() )){
-                    this.remove(-foundCount + i);
-                    foundCount++;
-                }
+                foundCount++;
+            }
         }
         return foundCount;        
     }
@@ -212,10 +202,11 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
     public String toString(){
         String str = "doublelinklist using iterator: [ ";
 
-        Iterator iterador = this.iterator();
-        while( iterador.hasNext() ){
-            str += iterador.next() + " ";
+        viIterator<E> iter = this.iterator();
+        while( iter.hasNext() ){
+            str += iter.next() + " ";
             /*
+            //get(n) will use getNode() and move over list for every n value - O(n2)
             str += this.get(n) + ", ";
             */
         }
@@ -253,34 +244,39 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
         //this.rabo, so do not throw exception when index == this.size
         if(index < 0 || index > this.size) throw new IndexOutOfBoundsException();
         
-        if(index <= (this.size / 2)){//start from head, moving to next
-            //head.getNext() references the node with 'index' 0 or 
-            //this.rabo for getNode(0) on an empty list
-            //currentNodo and i, advance at the same time
-            Nodo<E> currentNodo = this.head.getNext();
+        if(index < (this.size / 2)){
+            //start from head, moving to next
+            viIterator<E> iter = this.iterator();
+            iter.next();
             for(int i = 0;   
                 i < index;   
-                i++, currentNodo = currentNodo.getNext() )
+                i++,  iter.next() )
             {}//for has empty body
 
-            return currentNodo;
+            return  iter.getNode();
         }else{//start at rabo, moving to prev
             //this.rabo references the node with 'index' = this.size (a dummy node) 
-            //currentNodo and i, 'decrease', 'go to prev', at the same time
-            Nodo<E> currentNodo = this.rabo;
+            //including, getNode(0) on an empty list
+            viIterator<E> iter = this.iteratorRabo();
+            //iter.prev();
+
+            //if only nodes with data were needed, this previous instruction, iter.prev(),
+            //would be needed, together with i, starting at -1 + this.size
+            //But i want to start at dummy node, this.rabo, where i = this.size
+            //This is the node that must be returned when index = this.size
             for(int i = this.size;   
                 i > index;   
-                i--, currentNodo = currentNodo.getPrev() )
+                i--,  iter.prev() )
             {}//for has empty body
 
-            return currentNodo;
+            return  iter.getNode();
         }
     }  
 
-    private class Nodo<E>{
-        private E elemento;
-        private Nodo<E> next; 
+    private class Nodo<E>{ 
         private Nodo<E> prev;
+        private Nodo<E> next;
+        private E elemento;
 
         public Nodo(){
             this(null, null, null);
@@ -289,9 +285,9 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
             this(null, null, elm);
         }
         public Nodo(Nodo<E> prev, Nodo<E> next, E elm){
-            this.elemento = elm;
             this.prev = prev;
             this.next = next;
+            this.elemento = elm;
         }        
 
 
@@ -322,37 +318,66 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
 
 
 
-
-    public Iterator<E> iterator(){
-        return new viIterator<E> ( this.head.getNext() );
+    //iterator that starts at head, and must begin moving right 
+    //using hasNext() and next()
+    public viIterator<E> iterator(){
+        return new viIterator<E> ( this.head, this.rabo, this.head );
+    }
+    //iterator that starts at rabo, and must begin moving left 
+    //using hasPrev() and prev()
+    public viIterator<E> iteratorRabo(){
+        return new viIterator<E> ( this.head, this.rabo, this.rabo );
     }
 
     private class viIterator<E> implements Iterator<E>{
-        private Nodo<E> nodo;
+        private Nodo<E> targetNodo;
+        private Nodo<E> iterHead;
+        private Nodo<E> iterRabo;
 
-        public viIterator(Nodo<E> nodo){
-            this.nodo = nodo;
+        public viIterator(Nodo<E> iterHead, Nodo<E> iterRabo, Nodo<E> targetNodo){
+            this.iterHead = iterHead;
+            this.iterRabo = iterRabo;
+            this.targetNodo = targetNodo; 
         }
 
         public boolean hasNext(){
-            return this.nodo.getNext() != null   &&   this.nodo.getElemento() != null;
+            return this.targetNodo.getNext()  !=  this.iterRabo;
         }
 
         public E next(){
-            E elm = this.nodo.getElemento();
-            this.nodo = this.nodo.getNext();
-            return elm;
+            if ( this.targetNodo == this.iterRabo ) throw new NoSuchElementException();
+            this.targetNodo = this.targetNodo.getNext();
+            return this.targetNodo.getElemento();
+        }
+
+        public boolean hasPrev(){
+            return  this.targetNodo.getPrev()  !=  this.iterHead;
+        }
+
+        public E prev(){
+            if ( this.targetNodo == this.iterHead ) throw new NoSuchElementException();
+            this.targetNodo = this.targetNodo.getPrev();
+            return this.targetNodo.getElemento();            
         }
 
         public void remove(){
-            if ( ! this.hasNext() ) throw new NoSuchElementException();
+            if ( this.targetNodo == this.iterHead  ||  this.targetNodo == this.iterRabo ) throw new NoSuchElementException();
 
-            Nodo<E> left  = this.nodo.getPrev();
-            Nodo<E> right = this.nodo.getNext();
-            left.setNext ( this.nodo.getNext() );
-            right.setPrev( this.nodo.getPrev() );
-            this.nodo.clear(); //helping with garbage collection.
-            this.nodo = right;
+            Nodo<E> left  = this.targetNodo.getPrev();
+            Nodo<E> right = this.targetNodo.getNext();
+            Nodo<E> saved = this.targetNodo;
+            left.setNext ( this.targetNodo.getNext() );  //could also use right as parameter to setNext() 
+            right.setPrev( this.targetNodo.getPrev() );  //could also use left as parameter to setPrev()
+            this.targetNodo.clear(); //helping with garbage collection.
+            //at this moment targetNodo is null, the caller must have saved a reference to reset it 
+        }
+
+        public Nodo<E> getNode(){
+            return  this.targetNodo;
+        }
+
+        public void setNode( Nodo<E> targetNodo ){
+            this.targetNodo = targetNodo;
         }
     }//viIterator
 

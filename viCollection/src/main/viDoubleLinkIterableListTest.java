@@ -22,24 +22,58 @@ public class viDoubleLinkIterableListTest{
 
         lista.add("rosa");
         System.out.println(  "\nadding rosa..." );
-        System.out.println(  "\t"  + lista );        
+        System.out.println(  "\t"  + lista ); 
+
+        lista.add(0, "evelyn");
+        System.out.println(  "\nadding eve at 0..." );
+        System.out.println(  "\t"  + lista );  
+
+        lista.add(1, "luisa");
+        System.out.println(  "\nadding luisa at 1..." );
+        System.out.println(  "\t"  + lista );   
+
+        System.out.println(  "\nfirst.." );
+        System.out.println(  "\t"  + lista.first() );
+
+        System.out.println(  "\nlast..." );
+        System.out.println(  "\t"  + lista.last() );  
         
         lista.remove("cheo");
         System.out.println( "\nremove cheo ..." );
         System.out.println(  "\t"  + lista );
         
-        lista.remove("Victor");
-        System.out.println( "\nremove Victor ..." );
+        lista.remove(2);
+        System.out.println( "\nremove index=2 ...Victor ..." );
         System.out.println(  "\t"  + lista );
 
         //lista.set(1,"tita");  out of bound exception
         lista.set(0,"tita");        
-        System.out.println( "\nreplace rosa, set(0, tita) ..." );
+        System.out.println( "\nreplace evelyn, set(0, tita) ..." );
         System.out.println( "\t" + lista );
         
         lista.remove("tita");
         System.out.println( "\nremove (tita) ..." );
-        System.out.println( "\t" + lista );        
+        System.out.println( "\t" + lista ); 
+
+        lista.remove("rosa");
+        System.out.println( "\nremove (rosa) ..." );
+        System.out.println( "\t" + lista );    
+
+        lista.add("evelyn");
+        System.out.println(  "\nadding eve..." );
+        System.out.println(  "\t"  + lista );  
+
+        lista.add(0, "evelyn");
+        System.out.println(  "\nadding eve at 0..." );
+        System.out.println(  "\t"  + lista ); 
+
+        lista.add("evelyn");
+        System.out.println(  "\nadding eve..." );
+        System.out.println(  "\t"  + lista );        
+
+        lista.removeAll("evelyn");
+        System.out.println( "\nremoveAll evelyn ..." );
+        System.out.println( "\t" + lista );   
   
     }
 
