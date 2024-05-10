@@ -69,7 +69,25 @@ public class viDoubleLinkIterableListTest{
 
         lista.add("evelyn");
         System.out.println(  "\nadding eve..." );
-        System.out.println(  "\t"  + lista );        
+        System.out.println(  "\t"  + lista );     
+
+        System.out.println(  "\nfirst index eve..." );
+        System.out.println(  "\t"  + lista.firstIndex("evelyn") );
+
+        System.out.println(  "\nlast index eve..." );
+        System.out.println(  "\t"  + lista.lastIndex("evelyn") );   
+
+        System.out.println(  "\nfirst index luisa..." );
+        System.out.println(  "\t"  + lista.firstIndex("luisa") );
+
+        System.out.println(  "\nlast index luisa..." );
+        System.out.println(  "\t"  + lista.lastIndex("luisa") );
+
+        System.out.println(  "\nfirst index luiso..." );
+        System.out.println(  "\t"  + lista.firstIndex("luiso") );
+
+        System.out.println(  "\nlast index luiso..." );
+        System.out.println(  "\t"  + lista.lastIndex("luiso") );
 
         lista.removeAll("evelyn");
         System.out.println( "\nremoveAll evelyn ..." );

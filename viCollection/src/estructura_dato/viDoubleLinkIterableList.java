@@ -118,13 +118,13 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
         if(this.isEmpty())  throw new NoSuchElementException();
         
         //head.getNext() references the node with 'index' 0
-        //currentNodo and i advance at the same time
-        Nodo<E> currentNodo = this.head.getNext();
+        viIterator<E> iter = this.iterator();
+        iter.next();
         for(int i = 0;
             i < this.size;
-            i++, currentNodo = currentNodo.getNext() )
+            i++, iter.next() )
         {
-                if(elm.equals( currentNodo.getElemento() ))  return i;
+                if(elm.equals( iter.getNode().getElemento() ))  return i;
         }
 
         return -1;  
@@ -135,13 +135,13 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
         if(this.isEmpty())  throw new NoSuchElementException();
         
         //rabo.getPrev() references the node with 'index' == -1 + this.size
-        //currentNodo and i 'decrease' at the same time
-        Nodo<E> currentNodo = this.rabo.getPrev();
+        viIterator<E> iter = this.iteratorRabo();
+        iter.prev();
         for(int i = -1 + this.size;
             i >= 0;
-            i--, currentNodo = currentNodo.getPrev() )
+            i--, iter.prev() )
         {
-                if(elm.equals( currentNodo.getElemento() ))  return  i;
+                if(elm.equals( iter.getNode().getElemento() ))  return  i;
         }
 
         return -1; //here i must be -1 and currentNodo must be this.head
