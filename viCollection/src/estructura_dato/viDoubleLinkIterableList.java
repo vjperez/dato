@@ -81,16 +81,7 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
                 return  true;
             }
         }
-/*
-        //start at rabo, moving to prev
-        Nodo<E> currentNodo = this.rabo.getPrev();
-        for(int i = -1 + this.size;
-            i >= 0;
-            i--, currentNodo = currentNodo.getPrev() )
-        {
-                if(elm.equals( currentNodo.getElemento() ))  return  remove(i);
-        }
-*/
+
         return false; 
     }
 
@@ -180,7 +171,7 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
     //toString() from Object class 
     //implemented using iterator
     public String toString(){
-        String str = "doublelinklist using iterator: [ ";
+        String str = "iterable doublelinklist: [ ";
 
         viIterator<E> iter = this.iterator();
         while( iter.hasNext() ){
@@ -345,11 +336,14 @@ public class viDoubleLinkIterableList<E> implements viList<E>, Iterable<E>{
 
             Nodo<E> left  = this.targetNodo.getPrev();
             Nodo<E> right = this.targetNodo.getNext();
-            Nodo<E> saved = this.targetNodo;
             left.setNext ( this.targetNodo.getNext() );  //could also use right as parameter to setNext() 
             right.setPrev( this.targetNodo.getPrev() );  //could also use left as parameter to setPrev()
             this.targetNodo.clear(); //helping with garbage collection.
-            //at this moment targetNodo is null, the caller must have saved a reference to reset it 
+            
+            //at this moment targetNodo is cleared, 
+            //the caller using iterator, must have saved a reference to reset it,
+            //using iterator's getNode() and setNode( nodo ), 
+            //if caller still needs iterator after removing targetNodo 
         }
 
         public Nodo<E> getNode(){

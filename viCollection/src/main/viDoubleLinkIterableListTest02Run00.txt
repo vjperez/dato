@@ -1,0 +1,59 @@
+lista double link: String
+	iterable doublelinklist: [ ]
+
+adding victor,  toUpper()...
+	iterable doublelinklist: [ Victor ]
+
+adding cheo...
+	iterable doublelinklist: [ Victor cheo ]
+
+adding rosa...
+	iterable doublelinklist: [ Victor cheo rosa ]
+
+remove cheo ...
+	iterable doublelinklist: [ Victor rosa ]
+
+remove Victor ...
+	iterable doublelinklist: [ rosa ]
+
+replace rosa, set(0, tita) ...
+	iterable doublelinklist: [ tita ]
+
+remove (tita) ...
+	iterable doublelinklist: [ ]
+
+
+listaInt double link: Integer
+	iterable doublelinklist: [ ]
+
+add 1024...
+	iterable doublelinklist: [ 1024 ]
+
+remove(1024)...
+	iterable doublelinklist: [ ]
+
+listaInt double link : Integer 
+add five numbers..
+	iterable doublelinklist: [ 22 33 40 33 55 99 ]
+first index of 33: 1	last index of 33: 3
+first : 22	last : 99
+contains 22 : true	contains 40: true	contains 99: true
+
+add 33, at index 0, then add 33 ...
+	iterable doublelinklist: [ 33 22 33 40 33 55 99 33 ]
+first index of 33: 0	last index of 33: 7
+first : 33	last : 33
+contains 22 : true	contains 40: true	contains 99: true
+
+remove All 33's ...
+removed 4 instances of 33 ...
+	iterable doublelinklist: [ 22 40 55 99 ]
+clear it...
+	iterable doublelinklist: [ ]
+
+add 99 ...
+	iterable doublelinklist: [ 99 ]
+
+remove All 99's ...
+removed 1 instances of 99 ...
+	iterable doublelinklist: [ ]
